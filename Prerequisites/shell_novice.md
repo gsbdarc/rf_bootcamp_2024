@@ -116,7 +116,7 @@ To understand what a ‘home directory’ is, let’s have a look at how the fil
 
 On my local computer, the filesystem looks like:
 
-![](/intro-to-yens.github.io/assets/images/home-dir-local-machine.png)
+![](/intro-to-yens/assets/images/home-dir-local-machine.png)
 
 At the top is the root directory that holds everything else. We refer to it using a slash character, `/`, on its own; 
 this character is the leading slash in `/Users/nrapstin`.

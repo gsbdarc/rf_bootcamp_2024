@@ -25,7 +25,7 @@ Our Monte Carlo NPV simulation involves the following steps:
 5. Analyze the results to understand the range and characteristics of NPV outcomes.
 
 By running this simulation, we will gain valuable insights into how different input parameters impact NPV calculations and enable more informed economic decision-making. We will run this hands-on example first on our local machine, then on the yens, in serial and in parallel. 
-If you followed the <a href="/intro-to-yens.github.io/Prerequisites/setup" target="_blank">Setup Guide</a>, you should have this
+If you followed the <a href="/intro-to-yens/Prerequisites/setup" target="_blank">Setup Guide</a>, you should have this
 script in `intro-to-yens` folder on your Desktop. 
 
 If you don't have the script downloaded already, you can save the following code to a script on your local machine called `investment-npv-parallel.R`.
@@ -111,11 +111,11 @@ before we can install R libraries `foreach` and `doParallel`.
 Open RStudio and install the two packages from the console panel with the
 `install.packages(c("foreach", "doParallel"))` command:
 
-![](/intro-to-yens.github.io/assets/images/rstudio_package_install.png)
+![](/intro-to-yens/assets/images/rstudio_package_install.png)
 
 Once the packages are installed, open the script, `investment-npv-parallel.R` in RStudio and run it. 
 
-![](/intro-to-yens.github.io/assets/images/rstudio-run.png)
+![](/intro-to-yens/assets/images/rstudio-run.png)
 
 
 
@@ -128,7 +128,7 @@ To install R packages without using RStudio, open a terminal or a <a href="https
 
 Open the Terminal application (it's in the Utilities folder of the Applications folder). 
 
-![mac terminal](/intro-to-yens.github.io/assets/images/terminal-app.png)
+![mac terminal](/intro-to-yens/assets/images/terminal-app.png)
 
 #### Windows
 
