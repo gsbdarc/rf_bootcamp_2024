@@ -28,4 +28,4 @@ The learning outcomes for the course are:
 
 If at any point you would like to provide feedback on the course, please fill out the <a href="https://darc.stanford.edu/yen-intro-survey" target="_blank">course feedback form</a> so we can keep improving it for you and all future users.
 
-To do the hands-on portion of the course, please follow the <a href="/intro-to-yens/Prerequisites/setup/" target="_blank">Setup Guide</a> to install the necessary software.
+To do the hands-on portion of the course, please follow the <a href="/Prerequisites/setup/" target="_blank">Setup Guide</a> to install the necessary software.
