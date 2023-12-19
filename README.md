@@ -1,39 +1,31 @@
 ---
 layout: home
-title: Just the Class
+title:  Introduction to the Yens Course
 nav_exclude: true
 permalink: /:path/
 seo:
   type: Course
-  name: Just the Class
+  name: Introduction to the Yens Course 
+updateDate: 2023-12-19
 ---
 
-# Just the Class
+# Introduction to the Yens Course
 
-Just the Class is a GitHub Pages template developed for the purpose of quickly deploying course websites. In addition to serving plain web pages and files, it provides a boilerplate for:
+This course is self-paced or if taught live, it should take approximately 2 hours to get through all of the content.
 
-- [announcements](announcements.md),
-- a [course calendar](calendar.md),
-- a [staff](staff.md) page,
-- and a weekly [schedule](schedule.md).
+{% include note.html content="Our last live webinar was on January 26, 2022. Watch the recording <a href=\"https://drive.google.com/file/d/1U5sYTq6DkV-kT0Z1raR1ZeFO1qOWncO7/view?usp=sharing\" target=\"_blank\">here.</a>"%}
 
-Just the Class is a template that extends the popular [Just the Docs](https://github.com/just-the-docs/just-the-docs) theme, which provides a robust and thoroughly-tested foundation for your website. Just the Docs include features such as:
+The course is divided into a dozen sections that experienced users can jump to directly or if you are new to using Linux servers,
+we recommend going through them sequentially.
 
-- automatic [navigation structure](https://just-the-docs.github.io/just-the-docs/docs/navigation-structure/),
-- instant, full-text [search](https://just-the-docs.github.io/just-the-docs/docs/search/) and page indexing,
-- and a set of [UI components](https://just-the-docs.github.io/just-the-docs/docs/ui-components) and authoring [utilities](https://just-the-docs.github.io/just-the-docs/docs/utilities).
+The learning outcomes for the course are:
 
-## Getting Started
+1. Know what the DARC team does and what the yen servers are for
+2. Know how to access the yen servers via the terminal or from the web browser
+3. Know how to run research software like Python, R, Julia, MATLAB, SAS and Stata
+4. Know how to transfer files to and from the yen servers
+5. Know general yens use policies, how to request help and search DARC documentation
 
-Getting started with Just the Class is simple.
+If at any point you would like to provide feedback on the course, please fill out the <a href="https://darc.stanford.edu/yen-intro-survey" target="_blank">course feedback form</a> so we can keep improving it for you and all future users.
 
-1. Create a [new repository based on Just the Class](https://github.com/kevinlin1/just-the-class/generate).
-1. Update `_config.yml` and `README.md` with your course information. [Be sure to update the url and baseurl](https://mademistakes.com/mastering-jekyll/site-url-baseurl/).
-1. Configure a [publishing source for GitHub Pages](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages). Your course website is now live!
-1. Edit and create `.md` [Markdown files](https://guides.github.com/features/mastering-markdown/) to add more content pages.
-
-Just the Class has been used by instructors at Stanford University ([CS 161](https://stanford-cs161.github.io/winter2021/)), UC Berkeley ([Data 100](https://ds100.org/fa21/)), UC Santa Barbara ([CSW8](https://ucsb-csw8.github.io/s22/)), Northeastern University ([CS4530/5500](https://neu-se.github.io/CS4530-CS5500-Spring-2021/)), and Carnegie Mellon University ([17-450/17-950](https://cmu-crafting-software.github.io/)). Share your course website and find more examples in the [show and tell discussion](https://github.com/kevinlin1/just-the-class/discussions/categories/show-and-tell)!
-
-### Local development environment
-
-Just the Class requires no special Jekyll plugins and can run on GitHub Pages' standard Jekyll compiler. To setup a local development environment, clone your template repository and follow the GitHub Docs on [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
+To do the hands-on portion of the course, please follow the <a href="/intro-to-yens.github.io/Prerequisites/setup/" target="_blank">Setup Guide</a> to install the necessary software.
