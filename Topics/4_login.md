@@ -13,7 +13,7 @@ updateDate: 2023-12-19
 Yen access is provided in the following two ways:
 
 1. Automatically granted to GSB faculty, postdocs, PhD Students, and Research Fellows
-2. <a href="/yen/Collaborators.html" target="_blank">Collaborator access</a> sponsored by a GSB faculty member 
+2. <a href="https://rcpedia.stanford.edu/yen/Collaborators.html" target="_blank">Collaborator access</a> sponsored by a GSB faculty member 
 
 If you belong to one of the above two groups, you can use the Yen servers! Below are the instructions for connecting to the Yen servers.
 
@@ -37,7 +37,7 @@ $ ssh nrapstin@yen.stanford.edu
 
 If the login is successful, you will see something similar to the following:
 
-![](/images/ssh_yens.png)
+![](/intro-to-yens/assets/images/ssh_yens.png)
 
 You can also log into a specific interactive yen server. Choose what yen server you would like to connect to (yen1, yen2, yen3, yen4 or yen5).
 Here is the example of how to login to the yen3 server: 
@@ -78,4 +78,3 @@ the yen command line interface as all of them will pop up a window if everything
 (or choose your favorite X11 command line program).
 
 ---
-<a href="/gettingStarted/3_intro_to_yens.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/5_yen_software.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

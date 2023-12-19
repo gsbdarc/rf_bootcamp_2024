@@ -21,7 +21,7 @@ for your computing needs. These Linux research servers are useful for a variety 
 
 ## Yen Servers
 
-![](/intro-to-yens.github.io/assets/images/yens.png)
+![](/intro-to-yens/assets/images/yens.png)
 
 At the GSB, we have a collection of Ubuntu Linux servers (the `yen` cluster) specifically for doing your research computing work. 
  If you are a faculty member, PhD student, post-doc or research fellow, by default you should have access to these servers. 
