@@ -17,7 +17,7 @@ title: Introduction to the Yens Course
 tagline: GSB DARC Introduction to the Yens course websites
 author: GSB DARC Team 
 #baseurl: '/just-the-class' # the subpath of your site, e.g. /blog
-baseurl: '/intro-to-yens.github.io' # the subpath of your site, e.g. /blog
+baseurl: '/intro-to-yens' # the subpath of your site, e.g. /blog
 url: 'https://github.com/gsbdarc' # the base hostname & protocol for your site, e.g. http://example.com
 #url: 'https://kevinl.info' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE"]
