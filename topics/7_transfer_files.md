@@ -1,7 +1,7 @@
 ---
 title: 7. Transferring Files to and from Yen Servers 
 layout: page 
-parent: Topics 
+parent: topics 
 nav_order: 7
 updateDate: 2023-12-20
 ---

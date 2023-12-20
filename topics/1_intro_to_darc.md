@@ -2,7 +2,7 @@
 title: 1. Introduction to the DARC Team 
 layout: page
 nav_order: 1
-parent: Topics 
+parent: topics 
 updateDate: 2023-12-19
 ---
 
