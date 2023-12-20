@@ -3,7 +3,7 @@ title: 8. JupyterHub on Yen Servers
 layout: page 
 parent: Topics 
 nav_order: 8
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 # {{ page.title }}
@@ -25,7 +25,7 @@ To get started, open a web browser and visit one of the following links for each
 
 You will need to login with your SUNet credentials, and then click on `Start My Server`.  From there, you will have access to the web-based computing services available.
 
-![](/images/intro_to_yens/launch-hub.png)
+![](/intro_to_yens/assets/images/launch-hub.png)
 
 {% include important.html content="JupyterHub instances on each `yen` server are independent of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`." %}
 
@@ -37,39 +37,39 @@ We recommend taking a look at the <a href="https://jupyter-notebook.readthedocs.
 
 The JupyterLab interface looks like:
 
-![](/images/intro_to_yens/jupyterlab.png)
+![](/intro_to_yens/assets/images//jupyterlab.png)
 
 The front panel has a Launcher interface from which you can start notebooks with different language kernels and custom environment kernels.
 
 ### Notebook
-![](/images/intro_to_yens/notebooks.png)
+![](/intro_to_yens/assets/images/notebooks.png)
 
 Notebooks allow you to write code and execute it on the yens in your web browser. 
 Code is written into cells, which can be run in any order, on demand. 
 You can also include text, images, and plots to make your code read like a lab notebook.  
 Contact the [DARC team](mailto:gsb_darcresearch@stanford.edu) if you have a language you would like installed.
 
-**Note:** If you do not see Julia as an option under Notebooks, see <a href="/faqs/installJuliaOnJupyter.html" target="_blank">this page</a> on how to add it.
+**Note:** If you do not see Julia as an option under Notebooks, see <a href="https://rcpedia.stanford.edu/faqs/installJuliaOnJupyter.html" target="_blank">this page</a> on how to add it.
 
 ### RStudio
 -----------
-![](/images/intro_to_yens/rstudio.png)
+![](/intro_to_yens/assets/images/rstudio.png)
 
 RStudio GUI is also available! Clicking this link will bring up a new tab with a web-based RStudio on the Yens.
 
 If you opened up a notebook and want to get back to the Launcher interface to launch other software as well, click the "+" button in the upper left corner:
-![](/images/intro_to_yens/launcher.png)
+![](/intro_to_yens/assets/images/launcher.png)
 
 
 ### Console
 -------------------------
-![](/images/intro_to_yens/console.png)
+![](/intro_to_yens/assets/images/console.png)
 
 You can launch interactive consoles from JupyterHub.  These will behave very similar to the versions on the Yen servers.
 
 ### Terminal
 -------------------------
-![](/images/intro_to_yens/terminal.png)
+![](/intro_to_yens/assets/images/terminal.png)
 
 You can launch a terminal from JupyterHub.  This provides access to commands you would normally run on the command line on the Yens, 
 but through the web browser. However, we have seen issues with JupyterHub terminal (as well as VSCode) that modifies or overwrites python paths and environment variables so for package installations, we recommend using a terminal outside of JupyterHub.
@@ -87,27 +87,27 @@ We moved the script `investment-npv-parallel.R` into the newly created directory
 The JupyterHub instances will automatically launch from your home directory on the Yens. 
 Your home directory is a file icon shown by the red arrow:
 
-![](/images/intro_to_yens/file-browser.png)
+![](/intro_to_yens/assets/images/file-browser.png)
 
 The current directory is also displayed:
 
-![](/images/intro_to_yens/file-browser-current.png)
+![](/intro_to_yens/assets/images/file-browser-current.png)
 
 Clicking on the home icon (folder icon), returns the file browser back to your home where you can access any directories that are accessible from your home on the Yens.
 
-![](/images/intro_to_yens/home-dir-zfs.png)
+![](/intro_to_yens/assets/images/home-dir-zfs.png)
 
 Double click on the `zfs` directory in your home directory to navigate to your ZFS project files.
 
 
 ### File Upload and Download
 ----------------------------
-![](/images/jupyter_upload.png)
+![](/intro_to_yens/assets/images/jupyter_upload.png)
 
 One very useful feature of JupyterHub is the ability to upload and download files from ZFS. 
 First, make sure you are in the proper directory.  Then, to upload, click the up arrow on the top left of your screen to select a file from your local machine ot upload to the Yens.
 
-![](/images/jupyter_download.png "File Download")
+![](/intro_to_yens/assets/images/jupyter_download.png "File Download")
 
 To download, right click the file you would like to download to your local machine, and click "Download".
 
@@ -115,7 +115,7 @@ To download, right click the file you would like to download to your local machi
 ### Installing Packages
 -----------------------
 JupyterHub loads packages found in your `~/.local/` directory. 
-If you wish to install Python packages to be available in a JupyterHub notebook, we recommend using <a href="/training/5_python_env.html" target="_blank">Python `venv`</a> environment. 
+If you wish to install Python packages to be available in a JupyterHub notebook, we recommend using <a href="https://rcpedia.stanford.edu/training/5_python_env.html" target="_blank">Python `venv`</a> environment. 
 
 The following limits will be imposed on JupyterHub servers:
 
@@ -136,17 +136,16 @@ JupyterHub instance will shut down after 3 hours idle (no notebooks actively run
 
 {% include warning.html content="Idle servers shut down will not retain any local packages or variables in the notebooks.  Please save your output." %}
 
-If your processes require more than these limits, reach out to the <a href="/services/researchSupportRequest.html" target="_blank">DARC team</a> for support.
+If your processes require more than these limits, reach out to the <a href="https://rcpedia.stanford.edu/services/researchSupportRequest.html" target="_blank">DARC team</a> for support.
 
 ### Text File Editor
 -------------------------
-![](/images/intro_to_yens/editor.png)
+![](/intro_to_yens/assets/images/editor.png)
 
 Finally, you can also edit text files like R scripts directly on JupyterHub. Clicking on Text File icon will open a new file that you can edit. Similarly, clicking on Python File will create an empty `.py` file and clicking on R File will create an empty `.r` file.
 You can also navigate to a directory that has the scripts you want to edit and double click on the script name to open it up in the Text Editor.
 
 For example, navigate to `intro_yens_sep_2023` folder in file brower first then double click on `investment-npv-parallel.R` file to open it in the text editor:
-![](/images/intro_to_yens/edit-r-script.png)
+![](/intro_to_yens/assets/images/edit-r-script.png)
 
 ---
-<a href="/gettingStarted/7_transfer_files.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/9_run_jobs.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>
