@@ -3,7 +3,7 @@ title: 11. Running Software with a GUI
 layout: page 
 parent: Topics 
 nav_order: 11
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 # {{ page.title }}
@@ -35,7 +35,7 @@ $ xeyes
 ```
 which will pop up a window with eyes tracking where your mouse is.
 
-![](/images/intro_to_yens/xeyes.png)
+![](/intro_to_yens/assets/images/xeyes.png)
 
 
 #### R / RStudio GUI
@@ -65,14 +65,13 @@ $ rstudio
 
 The RStudio GUI will pop open and you can do anything you would normally do in RStudio (but with noticeable delay due to X tunneling):
 
-![](/images/intro_to_yens/rstudio-gui.png)
+![](/intro_to_yens/assets/images/rstudio-gui.png)
 
 
 If you forget to load R module or loaded only the rstudio module, you will see an error that R is not found:
 
-![](/images/intro_to_yens/rstudio-err.png)
+![](/intro_to_yens/assets/images/rstudio-err.png)
 
 If that happens, just load R module and start RStudio again.
 
 ---
-<a href="/gettingStarted/10_screen.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/12_monitor_usage.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

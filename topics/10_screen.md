@@ -101,4 +101,3 @@ No Sockets found in /run/screen/S-nrapstin.
 ```
 
 ---         
-<a href="/gettingStarted/9_run_jobs.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/11_run_gui.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

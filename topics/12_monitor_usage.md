@@ -3,7 +3,7 @@ title: 12. Monitoring Usage
 layout: page 
 parent: Topics 
 nav_order: 12
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 # {{ page.title }}
@@ -11,25 +11,25 @@ updateDate: 2023-12-19
 ## Monitoring Your Resource Footprint
 
 Certain parts of the GSB research computing infrastructure provide 
-environments that are managed by a scheduler (like <a href="/services/sherlock.html" target="_blank">Sherlock</a> or <a href="/yen/scheduler.html" target="_blank">Yen-Slurm</a>). In these cases it is not necessary for individuals to monitor resource usage themselves. 
+environments that are managed by a scheduler (like <a href="https://rcpedia.stanford.edu/services/sherlock.html" target="_blank">Sherlock</a> or <a href="https://rcpedia.stanford.edu/yen/scheduler.html" target="_blank">Yen-Slurm</a>). In these cases it is not necessary for individuals to monitor resource usage themselves. 
 
-However, when working on systems like the <a href="/yen/index.html" target="_blank">interactive yens</a> where resources like **CPU**, **RAM**, and **disk space** are _shared_ among many researchers,
+However, when working on systems like the <a href="https://rcpedia.stanford.edu/yen/index.html" target="_blank">interactive yens</a> where resources like **CPU**, **RAM**, and **disk space** are _shared_ among many researchers,
  it is important that all users be mindful of how their work impacts the larger community. 
 
 {% include tip.html content="When using interactive yens, use the ```htop``` and ```userload``` commands to monitor CPU and RAM usage. Use the ```gsbquota``` command to monitor disk quota." %}
 
 ### CPU & RAM
 
-Per our <a href="/yen/community.html" target="_blank">Community Guidelines</a>, CPU usage should always be limited to 48 CPU cores/threads per user at any one time on yen[2-5] and up to 12 CPU cores on yen1. 
+Per our <a href="https://rcpedia.stanford.edu/yen/community.html" target="_blank">Community Guidelines</a>, CPU usage should always be limited to 48 CPU cores/threads per user at any one time on yen[2-5] and up to 12 CPU cores on yen1. 
 Some software (R and RStudio, for example) default to claiming all available cores unless told to do otherwise. 
 These defaults should always be overwritten when running R code on the yens. Similarly, when working with multiprocessing code in languages like Python, 
-care must be taken to ensure your code does not grab everything it sees. Please refer to our parallel processing <a href="/topicGuides/index.html" target="_blank">Topic Guides</a> for information about how to limit resource consumption when using common packages.
+care must be taken to ensure your code does not grab everything it sees. Please refer to our parallel processing <a href="https://rcpedia.stanford.edu/topicGuides/index.html" target="_blank">Topic Guides</a> for information about how to limit resource consumption when using common packages.
 
 One easy method of getting a quick snapshot of your CPU and memory usage is via the ```htop``` command line tool. Running ```htop``` shows usage graphs and a process list that is sortable by user, top CPU, top RAM, and other metrics. Please use this tool liberally to monitor your resource usage, especially if you are running multiprocessing code on shared systems for the first time. 
 
 The ```htop``` console looks like this:
 
-![htop output for well-behaved code](/images/proc_monitoring.png)
+![htop output for well-behaved code](/intro-to-yens/assets/images/proc_monitoring.png)
 
 
 {% include warning.html content="Note that in certain cases greedy jobs may be terminated automatically to preserve the integrity of the system." %}
@@ -42,9 +42,9 @@ $ userload
 
 ### Disk
 
-Unlike personal home directories which have a 50 GB quota, faculty project directories on <a href="/storage/fileStorage.html" target="_blank">yens/ZFS</a> are much bigger (1T default). 
+Unlike personal home directories which have a 50 GB quota, faculty project directories on <a href="https://rcpedia.stanford.edu/storage/fileStorage.html" target="_blank">yens/ZFS</a> are much bigger (1T default). 
 Disk storage is a finite resource, however, so to allow us to continue to provide large project spaces please always be aware of your disk footprint. This includes compressing files when you are able, and removing intermediate and/or temp files whenever possible. 
-See the <a href="/storage/fileStorage.html" target="_blank">yen file storage page</a> for more information about file storage options.
+See the <a href="https://rcpedia.stanford.edu/storage/fileStorage.html" target="_blank">yen file storage page</a> for more information about file storage options.
 
 Disk quotas on all yen servers can be reviewed by using the ```gsbquota``` command. It produces output like this:
 
@@ -188,7 +188,7 @@ Parallel NPV Calculation (using 8 cores):
 While the program is running, you should see 8 R processes running in the `htop` output because we
 specified 8 cores in our R program and about 8 CPU cores being utilized in `userload` output. The program will run faster since we are using 8 cores instead of 1 but does not get you 8X speedup because of parallelization overhead. 
 
-![](/images/intro_to_yens/monitor-2.png)
+![](/intro_to_yens/assets/images/monitor-2.png)
 
 Last modification we are going to make is to pass the number of cores as a command line argument to our R script.
 Save the following to a new script called `investment-npv-parallel-args.R`. 
@@ -253,7 +253,7 @@ hist(results, main = 'NPV distribution')
 ```
 
 Now, we can run this script with varying number of cores. We will still limit the number of cores to 48 on yen[2-5] and to 12 cores on yen1 per 
-<a href="/yen/community.html" target="_blank">Community Guidelines</a>.
+<a href="https://rcpedia.stanford.edu/yen/community.html" target="_blank">Community Guidelines</a>.
 
 
 For example, to run with 12 cores:
@@ -281,4 +281,3 @@ Parallel NPV Calculation (using 12 cores):
 Monitor your CPU usage while the program is running in the other terminal window with `htop` and `userload`.
 
 ---
-<a href="/gettingStarted/11_run_gui.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/13_policies.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>
