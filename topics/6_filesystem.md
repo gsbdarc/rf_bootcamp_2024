@@ -1,7 +1,7 @@
 ---
 title: 6. Yen File System 
 layout: page 
-parent: topics 
+parent: Topics 
 nav_order: 6
 updateDate: 2023-12-20
 ---

@@ -1,9 +1,9 @@
 ---
 title: 10. How Do I Run a Job that Continues after I Log Out?
 layout: page 
-parent: Topics` 
+parent: Topics 
 nav_order: 10
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 # {{ page.title }}

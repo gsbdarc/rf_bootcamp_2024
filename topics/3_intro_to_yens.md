@@ -1,7 +1,7 @@
 ---
 title: 3. Introduction to the Yen Servers
 layout: page 
-parent: topics 
+parent: Topics 
 nav_order: 3
 updateDate: 2023-12-19
 ---

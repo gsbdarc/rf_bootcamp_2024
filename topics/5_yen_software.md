@@ -1,7 +1,7 @@
 ---
 title: 5. Yen Software
 layout: page 
-parent: topics 
+parent: Topics 
 nav_order: 5
 updateDate: 2023-12-19
 ---

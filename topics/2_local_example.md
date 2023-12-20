@@ -1,7 +1,7 @@
 ---
 title: 2. Running R Script Locally 
 layout: page
-parent: topics 
+parent: Topics 
 nav_order: 2
 updateDate: 2023-12-19
 ---

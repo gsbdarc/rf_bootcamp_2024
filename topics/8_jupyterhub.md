@@ -1,7 +1,7 @@
 ---
 title: 8. JupyterHub on Yen Servers
 layout: page 
-parent: topics 
+parent: Topics 
 nav_order: 8
 updateDate: 2023-12-20
 ---

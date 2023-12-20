@@ -3,7 +3,7 @@ title: 9. Running Interactive Jobs
 layout: page 
 parent: Topics 
 nav_order: 9 
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 # {{ page.title }}
@@ -18,7 +18,7 @@ When upgrading your
 R version (e.g., to run code with a newly released R version), you must first install packages that are needed for your script to run for that specific R version. However, once the package is
 installed, you can load it in your scripts without the need for repeated installations upon each login.
 
-Moreover, if you require access to a newer software version that is not currently available on the system, please don't hesitate to [contact DARC](mailto:gsb_darcresearch@stanford.edu) to request its installation. 
+Moreover, if you require access to a newer software version that is not currently available on the system, please don't hesitate to <a href=\"mailto:gsb_darcresearch@stanford.edu\">contact DARC</a> to request its installation. 
 
 ### Installing R packages without a Graphical Interface
 
@@ -138,7 +138,7 @@ or debugging, it can be very powerful. But the disadvantage is that if you close
 the session is not saved and you will need to reload the R module and paste all of the commands again. 
 So, use this method for when you need interactive development / debugging environment. Another disadvantage is that if you 
 did not login with the graphical interface (X forwarding) you will not be able to plot anything in the interactive console.
-So, if you need plots and graphs, either use `-Y` flag when connecting to the Yens or use RStudio on <a href="/gettingStarted/8_jupyterhub.html" target="_blank">JupyterHub</a>. 
+So, if you need plots and graphs, either use `-Y` flag when connecting to the Yens or use RStudio on <a href="/intro-to-yens/topics/8_jupyterhub" target="_blank">JupyterHub</a>. 
 
 We can then quit out of R without saving workspace image:
 
@@ -242,4 +242,3 @@ Parallel NPV Calculation (using 1 cores):
 Again, running this script is active as long as the session is active (terminal stays open and you do not lose connection).
 
 ---
-<a href="/gettingStarted/8_jupyterhub.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/10_screen.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

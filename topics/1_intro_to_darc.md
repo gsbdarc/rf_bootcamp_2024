@@ -2,7 +2,7 @@
 title: 1. Introduction to the DARC Team 
 layout: page
 nav_order: 1
-parent: topics 
+parent: Topics 
 updateDate: 2023-12-19
 ---
 
@@ -28,7 +28,7 @@ The Data, Analytics, and Research Computing (DARC) team supports GSB faculty res
 <a href="https://www.gsb.stanford.edu/faculty-research/darc" target="_blank">The GSB's DARC team</a> is available to help GSB faculty with research computing tasks and provide advice to PhD students 
 looking to undertake research computing tasks themselves. Analytics support is only available to GSB faculty.
 
-{% include tip.html content="You can contact us at <A HREF=\"mailto:gsb_darcresearch@stanford.edu\">gsb_darcresearch@stanford.edu.</A>" %}
+{% include tip.html content="You can contact us at <a href=\"mailto:gsb_darcresearch@stanford.edu\">gsb_darcresearch@stanford.edu.</a>" %}
 
 {% include new.html content="Join <A href=\"https://circlerss.slack.com/archives/C01JXJ6U4E5\" target=\"_blank\">#gsb-yen-users Slack channel</A> where you can ask and answer GSB Yen related questions and share your Yen usage wisdom with the community - Yen users and the DARC team. We will also use this channel to announce Yen related workshops and poll users about the Yens to improve our services. In case the link does not work, open Slack application, search for <b>#gsb-yen-users</b> channel in Channels and join it."%}
 
