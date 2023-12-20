@@ -3,7 +3,7 @@ title: 13. Yen Policy
 layout: page 
 parent: Topics 
 nav_order: 13
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 
@@ -25,7 +25,7 @@ updateDate: 2023-12-19
 ## Best Practices
 
 
-This page outlines usage guidelines for the yens with respect to system resources. See our <a href="/topicGuides/index.html" target="_blank">Topic Guides</a> page for specific resource management techniques for commonly used software on the yens including **Python** and **R**. 
+This page outlines usage guidelines for the yens with respect to system resources. See our <a href="https://rcpedia.stanford.edu/topicGuides/index.html" target="_blank">Topic Guides</a> page for specific resource management techniques for commonly used software on the yens including **Python** and **R**. 
 
 The yen systems comprise a *shared* cluster that hosts many researchers at the GSB. As these are powerful systems (256 CPU's and 1 TB RAM on yen[2-5] and 32 CPU's and 1.5 TB RAM on yen1), it is common for them to be used for complex jobs that may take hours, days or even longer to complete. For this reason it is important that all users of these systems understand how to limit their momentary resource footprints so that the larger community is not negatively impacted. 
 
@@ -54,4 +54,3 @@ If you are claiming too much CPU or RAM at one time then your jobs will be autom
 
 
 ---
-<a href="/gettingStarted/12_monitor_usage.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/14_acknowledgement.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

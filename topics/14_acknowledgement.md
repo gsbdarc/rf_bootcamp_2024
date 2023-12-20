@@ -3,7 +3,7 @@ title: 14. Acknowledging and Citing the DARC Team
 layout: page 
 parent: Topics 
 nav_order: 14
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 # {{ page.title }}
 ---
@@ -26,4 +26,3 @@ Here are a few sample acknowledgements for the different types of support you ma
 Our preferred citation includes both the full name of our center and the corresponding Research Resource Identifier (RRID). An RRID is a persistent identifier that allows researchers to cite a particular resource used in their work, just as a DOI is used to cite a paper or dataset. If the Yens and the DARC team were used for research that is being published, please use the DARC’s RRID (RRID:SCR_022938) to cite us. The use of RRIDs for this purpose is supported by scholarly publishers.
 
 ---
-<a href="/gettingStarted/13_policies.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/15_requests.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

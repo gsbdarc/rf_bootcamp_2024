@@ -3,7 +3,7 @@ title: 15. Service Requests
 layout: page 
 parent: Topics 
 nav_order: 15
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 # {{ page.title }}
 ---
@@ -15,10 +15,10 @@ The <a href="https://www.gsb.stanford.edu/faculty-research/darc" target="_blank"
 
 |   |   |   |
 |---|---|---|
-| <a href="/services/researchSupportRequest.html" target="_blank">Research Project Support</a>  | Broad assistance on research projects | GSB faculty only
-| <a href="/services/rcSupport.html" target="_blank">Research Computing Support</a>  | Consultations on system use  | `yen` users
-| <a href="/services/onboardNewData.html" target="_blank">Dataset Onboarding</a>  | Data acquisition, transfer and transformation  | GSB researchers
-| <a href="/services/newProject.html" target="_blank">Project Space</a>  | Space provisioning for new projects | GSB faculty
+| <a href="https://rcpedia.stanford.edu/services/researchSupportRequest.html" target="_blank">Research Project Support</a>  | Broad assistance on research projects | GSB faculty only
+| <a href="https://rcpedia.stanford.edu/services/rcSupport.html" target="_blank">Research Computing Support</a>  | Consultations on system use  | `yen` users
+| <a href="https://rcpedia.stanford.edu/services/onboardNewData.html" target="_blank">Dataset Onboarding</a>  | Data acquisition, transfer and transformation  | GSB researchers
+| <a href="https://rcpedia.stanford.edu/services/newProject.html" target="_blank">Project Space</a>  | Space provisioning for new projects | GSB faculty
 
 <br>
 
@@ -32,7 +32,6 @@ into and successes you have working with DARC.
 
 After the project is complete, we ask that you compute <a href="https://darc.stanford.edu/feedback" target="_blank">our feedback form</a> so we can improve our services and support you better.
 
-If you have any questions, feel free to contact us at: [gsb_darcresearch@stanford.edu](mailto:gsb_darcresearch@stanford.edu)
+If you have any questions, feel free to contact us at: <a href=\"mailto:gsb_darcresearch@stanford.edu\">gsb_darcresearch@stanford.edu</a>. 
 
 ---
-<a href="/gettingStarted/14_acknowledgement.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/16_documentation.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>
