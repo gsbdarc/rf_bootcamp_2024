@@ -3,7 +3,7 @@ title: 7. Transferring Files to and from Yen Servers
 layout: page 
 parent: Topics 
 nav_order: 7
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 # {{ page.title }}
@@ -45,7 +45,7 @@ $ scp *.csv <SUNetID>@yen-transfer.stanford.edu:/zfs/projects/students/<my_proje
 ```
 
 #### Example
-Let's transfer an <a href="/gettingStarted/2_local_example.html" target="_blank">R script</a> from your local machine to the Yen servers.
+Let's transfer an <a href="/intro-to-yens/topics/2_local_example" target="_blank">R script</a> from your local machine to the Yen servers.
 On your local machine, in a terminal, run:
 
 ```bash
@@ -85,7 +85,6 @@ $ scp -r <SUNetID>@yen.stanford.edu:/zfs/projects/students/<my_project_dir>/resu
 In this example, we're copying the `results` folder from the Yen's ZFS file system to your local directory (`.` signifies the current directory). If you're copying files (not directories), omit the `-r` flag. To transfer multiple files, use the wildcard `*` to match several files.
 
 ### Using Other Transfer Tools
-See <a href="/faqs/rclone.html" target="_blank">rclone</a> and <a href="/faqs/rclone.html" target="_blank">rsync</a> pages to learn two additional transfer tools. 
+See <a href="https://rcpedia.stanford.edu/faqs/rclone.html" target="_blank">rclone</a> and <a href="https://rcpedia.stanford.edu/faqs/rsync.html" target="_blank">rsync</a> pages to learn two additional transfer tools. 
 
 ---
-<a href="/gettingStarted/6_filesystem.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/8_jupyterhub.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

@@ -41,7 +41,7 @@ There's a number of software packages available for use on the Yen servers.  Her
 ## Loading the appropriate software
 
 We use Linux module system to load the software into your current environment. Linux modules are used on research servers
-as well as bigger high performance computing clusters like the <a href="/yen/scheduler.html" target="_blank">Yen-Slurm</a> at the GSB and <a href="https://www.sherlock.stanford.edu/" target="_blank">Sherlock</a> at Stanford. 
+as well as bigger high performance computing clusters like the <a href="https://rcpedia.stanford.edu/yen/scheduler.html" target="_blank">Yen-Slurm</a> at the GSB and <a href="https://www.sherlock.stanford.edu/" target="_blank">Sherlock</a> at Stanford. 
 The advantage of the module system is that as a system user you do not need to install the software yourself nor do you need to mess with setting up the paths correctly. 
 You simply load it and unload it in your current session and the correct paths get added to your environment variables. For software like
 Python, R and Julia, etc the user still needs to install their own libraries or packages. We will go over the details of how
@@ -253,4 +253,3 @@ Save workspace image? [y/n/c]: n
 ```
 
 ---
-<a href="/gettingStarted/4_login.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/6_filesystem.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>

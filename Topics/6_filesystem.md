@@ -3,16 +3,16 @@ title: 6. Yen File System
 layout: page 
 parent: Topics 
 nav_order: 6
-updateDate: 2023-12-19
+updateDate: 2023-12-20
 ---
 
 # {{ page.title }}
 ---
-If you are new to using the Unix shell, please go over the <a href="/gettingStarted/shell_novice.html" target="_blank">Shell Introduction</a>
+If you are new to using the Unix shell, please go over the <a href="/intro-to-yens/prerequisites/shell_novice" target="_blank">Shell Introduction</a>
 first.
  
 If you’re already comfortable manipulating files and directories (using `ls`, `pwd`, `cd`, `mv`, `rm` commands), 
-you probably want to explore the next lesson: <a href="/gettingStarted/shell_extras.html" target="_blank">Shell Extras</a>, 
+you probably want to explore the next lesson: <a href="/intro-to-yens/extras/shell_extras" target="_blank">Shell Extras</a>, 
 to learn about searching for files with `grep` and `find`, and writing simple shell loops and scripts.
  
 ### Home Directory
@@ -32,7 +32,7 @@ This will print your working directory (where `<SUNetID>` is your SUNet ID):
 To see this schematically, here is a visualization of the home directory on the file system:
 
 
-![](/images/intro_to_yens/home-dir.png)
+![](/intro_to_yens/assets/images/home-dir.png)
 
 The squares with `...` in them indicate more directories that are not shown in the graph.
 
@@ -80,14 +80,14 @@ The GSB now has nearly 1 PB of high-performance storage available from the yen s
 If you are a GSB researcher that is interested in starting a new project on the Yens,
 please complete and submit DARC’s new <a href="http://darc.stanford.edu/yenstorage" target="_blank">project request form</a>.
 This form allows you to estimate disk usage, and specify any collaborators that should be added to the shared access list.
-ZFS project access is granted by <a href="/yen/workgroups.html" target="_blank">workgroups</a>.
+ZFS project access is granted by <a href="https://rcpedia.stanford.edu/yen/workgroups.html" target="_blank">workgroups</a>.
 
 The project directories on ZFS have much bigger quotas (1 T default). However, we ask that you be responsible and
 delete what you no longer need such as intermediate files, etc.
 
 Schematically, we can visualize the path to the project directory as follows:
 
-![](/images/intro_to_yens/project-dir.png)
+![](/intro_to_yens/assets/images/project-dir.png)
 
 The absolute path to your project space is:
 
@@ -99,7 +99,7 @@ where `<your-project-dir>` is the name of your project directory (created for yo
 
 **Backups**
 
-Files on ZFS are backed up as "snapshots" and can be restored manually by any user. Please see the page <a href="/faqs/howRecoverZFSFiles.html" target="_blank">How Do I Recover ZFS Files</a> for instructions on recovering files. There is currently an off-site disaster recovery solution implemented as well for both ZFS and home directories.
+Files on ZFS are backed up as "snapshots" and can be restored manually by the system admins. Please see the page <a href="https://rcpedia.stanford.edu/faqs/howRecoverZFSFiles.html" target="_blank">How Do I Recover ZFS Files</a> for instructions on recovering files. There is currently an off-site disaster recovery solution implemented as well for both ZFS and home directories.
 
 ### Local Disk
 
@@ -107,7 +107,6 @@ On each Yen machine, there is a local scratch space mounted at ```/scratch```. A
 
 {% include warning.html content="Note that scratch space on all yens is cleared during system reboots, and is subject to intermittent purging as needed by the admins. Therefore local scratch space is usually best only for temporary files." %}
 
-If you need to work with the older AFS file system, see <a href="/faqs/afsLink.html" target="_blank">this page</a> to learn about how to access your AFS space on the Yens. 
+If you need to work with the older AFS file system, see <a href="https://rcpedia.stanford.edu/faqs/afsLink.html" target="_blank">this page</a> to learn about how to access your AFS space on the Yens. 
 
 ---
-<a href="/gettingStarted/5_yen_software.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/7_transfer_files.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>
