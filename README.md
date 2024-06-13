@@ -1,4 +1,4 @@
-# GSB RF Bootcmap 
+# GSB RF Bootcamp 
 
 NEEDS UPDATING!!!
 Visit the course <a href="https://gsbdarc.github.io/intro-to-yens" target="_blank">website</a>.
