@@ -1,8 +1,8 @@
 # GSB RF Bootcamp 
 
 NEEDS UPDATING!!!
-Visit the course <a href="https://gsbdarc.github.io/intro-to-yens" target="_blank">website</a>.
+Visit the course <a href="https://gsbdarc.github.io/rf-bootcamp" target="_blank">website</a>.
 
-Welcome to the GitHub repository for the **Introduction to the Yens Course**. This course, designed for both self-paced learning and live instruction, provides comprehensive introduction to using the Yen servers, at Stanford GSB. 
+Welcome to the GitHub repository for the **RF Bootcamp 2024**. This course, designed for live instruction, provides comprehensive introduction to using the Yen servers, at Stanford GSB. 
 
 
