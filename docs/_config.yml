@@ -36,9 +36,6 @@ footer_content:
 # Collections for website data
 collections:
   staffers:
-  modules:
-  schedules:
-  announcements:
 # Default layouts for each collection type
 defaults:
   - scope:
@@ -49,21 +46,6 @@ defaults:
       height: 300
       subpath: '/assets/images/'
       width: 300
-  - scope:
-      path: ''
-      type: modules
-    values:
-      layout: module
-  - scope:
-      path: ''
-      type: schedules
-    values:
-      layout: schedule
-  - scope:
-      path: ''
-      type: announcements
-    values:
-      layout: announcement
 
 compress_html:
   clippings: all
@@ -72,3 +54,10 @@ compress_html:
   startings: []
   blanklines: false
   profile: false
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true
