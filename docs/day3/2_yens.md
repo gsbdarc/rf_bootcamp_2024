@@ -2,7 +2,7 @@
 title: 2. Yen Servers
 layout: page
 nav_order: 2
-parent: Topics 
+parent: Day 3 
 updateDate: 2024-06-19
 ---
 
