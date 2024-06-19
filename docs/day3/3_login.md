@@ -15,9 +15,9 @@ updateDate: 2024-06-19
 
 On the Yens, run:
 <script type="text/javascript" 
-    src="https://asciinema.org/a/MMWrOoKfWEhUHzTunAWZ0mCuS.js" 
-    id="asciicast-MMWrOoKfWEhUHzTunAWZ0mCuS" 
-    data-preload="true" data-speed="2" data-theme="monokai"
+    src="https://asciinema.org/a/ouvEUiyesZMEnzrowFYSx4mIM.js" 
+    id="asciicast-ouvEUiyesZMEnzrowFYSx4mIM" 
+    data-preload="true" data-speed="1" data-theme="monokai"
     async="true">
 </script>
 
