@@ -13,10 +13,9 @@ As a research fellow, you, by default already have access to these servers.
  They are administered by the <a href="https://srcc.stanford.edu" target="_blank">Stanford Research Computing (SRC)</a> and located in Stanford's data centers.
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="../assets/images/yens.png" style="width: 48%;">
-  <img src="../assets/images/yens-2.png" style="width: 48%;">
+  <img src="../assets/images/yens.png" alt="Yens Image 1" style="width: 48%;">
+  <img src="../assets/images/yens-2.png" alt="Yens Image 2" style="width: 48%;">
 </div>
-
 
 {% include important.html content="The `yen` servers are not designed for teaching or course work!" %}
 
