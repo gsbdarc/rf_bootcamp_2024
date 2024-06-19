@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Introduction to the Yens Course 
-tagline: GSB DARC Introduction to the Yens course websites
+title: RF Coding Bootcamp 2024 
+tagline: GSB RF Coding Bootcamp Website
 author: GSB DARC Team 
 baseurl: '/rf_bootcamp_2024' # the subpath of your site, e.g. /blog
 url: 'https://github.com/gsbdarc' # the base hostname & protocol for your site, e.g. http://example.com
