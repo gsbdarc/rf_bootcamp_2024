@@ -1,5 +1,5 @@
 ---
-title: Login and Copy Examples 
+title: 3. Login and Copy Examples 
 layout: page
 nav_order: 3
 parent: Day 3 
