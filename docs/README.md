@@ -13,4 +13,4 @@ updateDate: 2024-06-19
 ## Working on the Yens
 
 The DARC Team:
-![](/asssets/images/gsbrh_092122_0021.jpg)
+![](asssets/images/gsbrh_092122_0021.jpg)
