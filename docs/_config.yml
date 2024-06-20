@@ -33,9 +33,13 @@ aux_links:
     - 'https://darc.stanford.edu/bootcamp-survey'
 footer_content:
 
-# Collections for website data
-collections:
-  staffers:
+theme: just-the-docs
+just_the_docs:
+  # Other configurations...
+  assets:
+    css:
+      - /assets/css/custom.css
+
 # Default layouts for each collection type
 defaults:
   - scope:

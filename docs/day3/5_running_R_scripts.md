@@ -3,7 +3,7 @@ title: 5. Running R Scripts Interactively
 layout: page
 nav_order: 5
 parent: Day 3
-updateDate: 2024-06-19
+updateDate: 2024-06-20
 ---
 
 # {{ page.title }}
@@ -147,10 +147,26 @@ We can then quit out of R without saving workspace image:
 Save workspace image? [y/n/c]: n
 ```
 -------------------------
-#### Running R Script on the Command Line
-If you want to simply run the script, you can do so from the command line. 
+Throughout this course, we will explore practical examples that showcase the power of data analytics and research computing.
+One such example involves Monte Carlo simulations to calculate Net Present Value (NPV) – a fundamental concept in economics and finance.
 
-We are going to run the R code, `investment-npv-parallel.R`. View the complete script [here](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/investment-npv-parallel.R).
+## Introducing an R Example
+In the realm of economics research, assessing the value of future cash flows is crucial. The Net Present Value (NPV) calculation helps us evaluate the worth of an investment or project by discounting future cash flows to their present value.
+
+Monte Carlo simulations are a powerful computational approach used to model complex systems and make informed decisions in the face of uncertainty. In our NPV calculation example, we will employ Monte Carlo simulations to explore various scenarios and evaluate the NPV of investment projects.
+
+Our Monte Carlo NPV simulation involves the following steps:
+
+1. Randomly generate cash flows over a specified number of periods.
+2. Assign a random discount rate to each trial, representing different scenarios.
+3. Calculate the NPV for each trial using the generated cash flows and discount rate.
+4. Repeat this process for a substantial number of trials (e.g., 50,000) to obtain a distribution of NPV values.
+5. Analyze the results to understand the range and characteristics of NPV outcomes.
+
+By running this simulation, we will gain valuable insights into how different input parameters impact NPV calculations and enable more informed economic decision-making. We will run this hands-on example in serial and in parallel, interactively and using a scheduler. We are going to run the R code, `investment-npv-parallel.R`. View the complete script [here](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/investment-npv-parallel.R).
+
+#### Running Serial R Script on the Command Line
+If you want to simply run the script, you can do so from the command line. 
 
 {% include warning.html content="Because this R code uses multiprocessing and the yens are a shared computing environment, we need to be careful about how R sees and utilizes the shared cores on the yens."%}
 
