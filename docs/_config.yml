@@ -25,6 +25,11 @@ remote_theme: just-the-docs/just-the-docs@v0.7.0
 color_scheme: light
 search_enabled: true
 heading_anchors: true
+
+# Enable syntax highlighting
+highlighter: rouge
+
+
 permalink: pretty
 aux_links:
   GSB RCpedia:
@@ -33,12 +38,8 @@ aux_links:
     - 'https://darc.stanford.edu/bootcamp-survey'
 footer_content:
 
-theme: just-the-docs
 just_the_docs:
-  # Other configurations...
-  assets:
-    css:
-      - /assets/css/custom.css
+  html_head: _includes/head_custom.html
 
 # Default layouts for each collection type
 defaults:
@@ -59,9 +60,7 @@ compress_html:
   blanklines: false
   profile: false
 
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-  syntax_highlighter_opts:
-    disable: true
+#markdown: kramdown
+#kramdown:
+#  input: GFM
+#  hard_wrap: false
