@@ -3,37 +3,32 @@ title: 1. Computationally Intensive Empirical Tasks
 layout: page
 nav_order: 1
 parent: Day 3 
-updateDate: 2024-06-19
+updateDate: 2024-06-24
 ---
 
 # {{ page.title }}
 ---
-## Common examples of tasks that may require a computing cluster
-- Analyzing a large dataset
-- Running many instances of a simulation
-- Estimating parameters for a structural model
-- Training / fine-tuning large language models
+## Why Use a Computing Cluster?
+In many research scenarios, tasks can exceed the capabilities of your laptop due to limitations in memory or processing power. Here's why moving to a compute cluster like the Yens can be essential:
 
-Most times you will need to move to a compute cluster, it will be due to Memory or Runtime.
+### Common Tasks Requiring a Computing Cluster
+- **Analyzing Large Datasets**: Large volumes of data require more memory and processing power.
+- **Running Many Instances of a Simulation**: Simulations can be computationally intensive and time-consuming.
+- **Estimating Parameters for Structural Models**: Complex models need significant computational resources.
+- **Training/Fine-tuning Large Language Models**: Such models require extensive processing power and (GPU) memory.
 
-# Memory Issues
-- When not being used, data is stored on the hard drive (also called “storage” or disk). When in use a copy is stored in RAM or "Random Access Memory" or simply “memory”.
-- RAM can be accessed and manipulated much faster than even the best SSDs (by 100-1000x).
-- Once you run out of RAM processes move onto the hard drive and slow down.
-- Check your memory if having issues running a script, move if memory is filled in the process.
-- Most modern laptops have 4-16 GB of RAM. If your dataset is over half the size of your RAM, your computer probably won't be too happy.
+### Memory Issues
+- **RAM vs. Storage**: Data is stored on the hard drive (also called "storage" or disk) and is copied to RAM (Random Access Memory or simply "memory") when in use. RAM is much faster (100-1000x) than even the best SSDs.
+- **Impact of Insufficient RAM**: When you run out of RAM, processes slow down as they move to the hard drive.
+- **Monitor Memory Usage**: If you encounter issues running a script, check your memory usage. If your dataset is larger than half your RAM, your laptop will struggle. Most modern laptops have 4-16 GB of RAM.
 
-# Runtime Issues
-- Memory is where information is stored, but the CPU does the work.
-- CPUs are rated by the processing speed (Hz) and number of instruction centers (cores).
-- If instructions need to be performed in order, things can take a very long time:
-    - Say we have a function called runSimulation() which takes 1 minute to run on your laptop CPU.
-    - Doing so 1000 times on the laptop would take 1000 minutes.
-    - We don't have to do them in order though... with 100 laptops this would take 10 minutes.
+### Runtime Issues
+- **CPU Role**: Memory is where information is stored, but the CPU does the work. The CPU (Central Processing Unit) executes tasks and is rated by processing speed (Hz) and the number of cores.
+- **Sequential vs. Parallel Processing**:
+	- Sequential tasks (instructions that must be performed in order) can be time-consuming. For example, a function `runSimulation()` taking 1 minute per run would need 1000 minutes to run 1000 times sequentially on a single laptop.
+	- Parallel processing can significantly reduce this time if we don't have to carry out the insturctions in order. With 100 laptops, the same task would take just 10 minutes.
 
-
-# Parallelization and Multiple CPUs
-- A function which does not change anything outside its local environment has no ‘side effects’.
-- Multiple CPUs can work at the same time provided their work has no interacting side effects.
-- Parallelization often increases memory costs by duplicating data (tradeoff between runtime and memory optimization).
-- Parallelizing processes is a great way to speed them up, but requires time consuming coding.
+### Parallelization and Multiple CPUs
+- **Side Effect-Free Functions**: Functions that do not change anything outside their local environment can be parallelized, as they have no 'side effects'.
+- **Benefits of Parallelization**: Multiple CPUs can work simultaneously, provided their work has no interacting side effects. However, this often increases memory usage due to data duplication (tradeoff between runtime and memory optimization).
+- **Parallelizeing Your Research Code**: While parallelizing processes can save time, it requires time-consuming coding.

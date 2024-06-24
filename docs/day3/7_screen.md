@@ -1,7 +1,7 @@
 ---
-title: 6. How Do I Run a Job that Continues after I Log Out?
+title: 7. How Do I Run a Job that Continues after I Log Out?
 layout: page
-nav_order: 6
+nav_order: 7
 parent: Day 3
 updateDate: 2024-06-19
 ---
