@@ -8,26 +8,26 @@ updateDate: 2024-06-20
 
 # {{ page.title }}
 
-The `yen-slurm` is a new computing cluster offered by the Stanford Graduate School of Business.  It is designed to give researchers the ability to run computations that require a large amount of resources without leaving the environment and filesystem of the interactive Yens.
+The `yen-slurm` is a computing cluster designed to give researchers the ability to run computations that require a large amount of resources without leaving the environment and filesystem of the interactive Yens.
 
 The `yen-slurm` cluster has 11 nodes with over 1,500 CPU cores, 10 TB of memory, and 12 NVIDIA GPU's.
 
 ## What is a scheduler?
 
-The `yen-slurm` cluster can be accessed by the [Slurm Workload Manager](https://slurm.schedmd.com/).  Researchers can submit jobs to the cluster, asking for a certain amount of resources (CPU, Memory, and Time).  Slurm will then manage the queue of jobs based on what resources are available. In general, those who request less resources will see their jobs start faster than jobs requesting more resources.
+The `yen-slurm` cluster can be accessed by the [Slurm Workload Manager](https://slurm.schedmd.com/).  Researchers can submit jobs to the cluster, asking for a certain amount of resources (CPU, Memory, GPUs and Time).  Slurm will then manage the queue of jobs based on what resources are available. In general, those who request less resources will see their jobs start faster than jobs requesting more resources.
 
 ## Why use a scheduler?
 
 A job scheduler has many advantages over the directly shared environment of the yens:
 
-* Run jobs with a guaranteed amount of resources (CPU, Memory, Time)
+* Run jobs with a guaranteed amount of resources (CPU, Memory, GPUs, Time)
 * Setup multiple jobs to run automatically
-* Run jobs that exceed the [community guidelines on the interactive nodes](/yen/community.html)
+* Run jobs that exceed the community guidelines on the interactive nodes
 * Gold standard for using high-performance computing resources around the world
 
 ## How do I use the scheduler?
 
-First, you should make sure your process can run on the interactive Yen command line.  We've written a guide on migrating a process from [JupyterHub to yen-slurm](/yen/migratingFromJupyter.html).  [Virtual Environments](/topicGuides/pythonEnv.html) will be your friend here.
+First, you should make sure your process can run on the interactive Yen command line.  
 
 Once your process is capable of running on the interactive Yen command line, you will need to create an slurm script.  This script has two major components:
 
@@ -74,7 +74,7 @@ Jobs with state (ST) R are running, and PD are pending.  Your job will run based
 
 ### Use all of the resources you request
 
-The Slurm scheduler keeps track of the resources you request, and the resources you use. Frequent under-utilization of CPU and Memory will affect your future job priority.  You should be confident that your job will use all of the resources you request.  It's recommended that you run your job on the interactive Yens, and [monitor resource usage](/faqs/howCheckResourceUsage.html) to make an educated guess on resource usage.
+The Slurm scheduler keeps track of the resources you request, and the resources you use. Frequent under-utilization of CPU and Memory will affect your future job priority.  You should be confident that your job will use all of the resources you request.  It's recommended that you run your job on the interactive Yens, and monitor resource usage to make an educated guess on resource usage.
 
 ### Restructure your job into small tasks
 
@@ -108,7 +108,7 @@ The four partitions have the following limits:
 
 | Partition      | CPU Limit Per User | Memory Limit           | Max Memory Per CPU (default)  | Time Limit (default) |
 | -------------- | :----------------: | :--------------------: | :----------------------------:| :-------------------:|
-|  normal        |    256             | 3 TB                   |   24 GB (4 GB)                | 2 days  (2 hours)    |
+|  normal*       |    256             | 3 TB                   |   24 GB (4 GB)                | 2 days  (2 hours)    |
 |  dev           |    2               | 48 GB                  |   24 GB (4 GB)                | 2 hours (1 hour)     |
 |  long          |    50              |  1.2 TB                |   24 GB (4 GB)                | 7 days (2 hours)     |
 |  gpu           |    64              |  256 GB                |   24 GB (4 GB)                | 1 day (2 hours)      |
