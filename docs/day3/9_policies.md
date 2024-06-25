@@ -1,7 +1,7 @@
 ---
-title: 10. Yen Policy
+title: 9. Yen Policy
 layout: page
-nav_order: 10 
+nav_order: 9 
 parent: Day 3
 updateDate: 2024-06-19
 ---
@@ -25,7 +25,7 @@ updateDate: 2024-06-19
 ## Best Practices
 
 
-This page outlines usage guidelines for the yens with respect to system resources. See our <a href="/topicGuides/index.html" target="_blank">Topic Guides</a> page for specific resource management techniques for commonly used software on the yens including **Python** and **R**. 
+This page outlines usage guidelines for the yens with respect to system resources. 
 
 The yen systems comprise a *shared* cluster that hosts many researchers at the GSB. As these are powerful systems (256 CPU's and 1 TB RAM on yen[2-5] and 32 CPU's and 1.5 TB RAM on yen1), it is common for them to be used for complex jobs that may take hours, days or even longer to complete. For this reason it is important that all users of these systems understand how to limit their momentary resource footprints so that the larger community is not negatively impacted. 
 
@@ -51,7 +51,3 @@ Are you actively using all of the RAM you have (consider saving to disk or clear
 Unix `top` and `htop` are typical, easy to understand tools that can provide quick insights into all the system’s processes, including your own. Columns in both tools can be sorted by CPU, RAM, VRAM, or PID. `htop` also provides nice CPU graphs. Make sure your job is behaving as expected - pay particular attention to processes that use *increasing* amounts of RAM or try to use all available CPUs.  If you notice a problem, halt your job and fix the issue before restarting it.
 
 If you are claiming too much CPU or RAM at one time then your jobs will be automatically killed, or the DARC team may contact you directly to ask you to terminate your job. This is always a drag for everybody. Please don’t make us do this. 
-
-
----
-<a href="/gettingStarted/12_monitor_usage.html"><span class="glyphicon glyphicon-menu-left fa-lg" style="float: left;"/></a> <a href="/gettingStarted/14_acknowledgement.html"><span class="glyphicon glyphicon-menu-right fa-lg" style="float: right;"/></a>
