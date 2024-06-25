@@ -1,7 +1,7 @@
 ---
-title: 3. Parallel Script
+title: 5. Parallel Script
 layout: page
-nav_order: 3
+nav_order: 5
 parent: Day 4
 updateDate: 2024-06-20
 ---

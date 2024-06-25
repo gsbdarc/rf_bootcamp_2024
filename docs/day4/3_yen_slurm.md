@@ -1,7 +1,7 @@
 ---
-title: 1. Yen-Slurm Cluster 
+title: 3. Yen-Slurm Cluster 
 layout: page
-nav_order: 1
+nav_order: 3
 parent: Day 4
 updateDate: 2024-06-20
 ---

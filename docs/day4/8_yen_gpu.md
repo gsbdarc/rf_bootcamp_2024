@@ -1,7 +1,7 @@
 ---
-title: 6. Run jobs on Yen's GPU node 
+title: 8. Run jobs on Yen's GPU node 
 layout: page
-nav_order: 6
+nav_order: 8
 parent: Day 4
 updateDate: 2024-06-20
 ---

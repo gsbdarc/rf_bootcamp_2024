@@ -1,7 +1,7 @@
 ---
-title: 4. Command Line Arguments 
+title: 6. Command Line Arguments 
 layout: page
-nav_order: 4
+nav_order: 6
 parent: Day 4
 updateDate: 2024-06-20
 ---

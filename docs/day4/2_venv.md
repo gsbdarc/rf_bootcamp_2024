@@ -1,7 +1,7 @@
 ---
-title: 8. Python Virtual Environments
+title: 2. Python Virtual Environments
 layout: page
-nav_order: 8
+nav_order: 2
 parent: Day 4
 updateDate: 2024-06-20
 ---

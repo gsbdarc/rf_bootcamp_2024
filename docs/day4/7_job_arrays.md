@@ -1,7 +1,7 @@
 ---
-title: 5. Job Arrays
+title: 7. Job Arrays
 layout: page
-nav_order: 5
+nav_order: 7
 parent: Day 4
 updateDate: 2024-06-20
 ---
