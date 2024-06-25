@@ -1,6 +1,6 @@
 # In the context of economics and finance, Net Present Value (NPV) is used to assess 
 # the profitability of investment projects or business decisions.
-# This code performs a Monte Carlo simulation of Net Present Value (NPV) with 500,000 trials in parallel,
+# This code performs a Monte Carlo simulation of Net Present Value (NPV) with 50,000 trials in parallel,
 # utilizing multiple CPU cores. It randomizes input parameters for each trial, calculates the NPV,
 # and stores the results for analysis.
 
@@ -24,7 +24,7 @@ npv_calculation <- function(cashflows, discount_rate) {
 }
 
 # number of trials
-num_trials <- 500000
+num_trials <- 50000
 
 # measure the execution time of the Monte Carlo simulation
 system.time({
