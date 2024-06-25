@@ -1,17 +1,21 @@
-# In the context of economics and finance, Net Present Value (NPV) is used to assess 
-# the profitability of investment projects or business decisions.
-# This code performs a Monte Carlo simulation of Net Present Value (NPV) with 50,000 trials in parallel,
-# utilizing multiple CPU cores. It randomizes input parameters for each trial, calculates the NPV,
-# and stores the results for analysis.
-
-# load necessary libraries
+#!/usr/bin/env Rscript
+############################################
+# This script accepts a user specified argument to set the number of cores to run on
+# Run from the command line:
+#
+#      Rscript investment-npv-parallel-args.R 8
+#
+# this will execute on 8 cores
+###########################################
+# accept command line arguments and save them in a list called args
+args = commandArgs(trailingOnly=TRUE)
 library(foreach)
 library(doParallel)
 
 options(warn=-1)
 
-# set the number of cores here
-ncore <- 8
+# set the number of cores here from the command line. Avoid using detectCores() function.
+ncore <- as.integer(args[1])
 
 # register parallel backend to limit threads to the value specified in ncore variable
 registerDoParallel(ncore)

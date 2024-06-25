@@ -11,7 +11,7 @@ library(doParallel)
 options(warn=-1)
 
 # set the number of cores here
-ncore <- 8
+ncore <- 1
 
 # register parallel backend to limit threads to the value specified in ncore variable
 registerDoParallel(ncore)

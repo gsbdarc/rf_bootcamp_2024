@@ -138,7 +138,7 @@ or debugging, it can be very powerful. But the disadvantage is that if you close
 the session is not saved and you will need to reload the R module and paste all of the commands again. 
 So, use this method for when you need interactive development / debugging environment. Another disadvantage is that if you 
 did not login with the graphical interface (X forwarding) you will not be able to plot anything in the interactive console.
-So, if you need plots and graphs, either use `-Y` flag when connecting to the Yens or use RStudio on <a href="/gettingStarted/8_jupyterhub.html" target="_blank">JupyterHub</a>. 
+So, if you need plots and graphs, either use `-Y` flag when connecting to the Yens or use RStudio on JupyterHub. 
 
 We can then quit out of R without saving workspace image:
 
