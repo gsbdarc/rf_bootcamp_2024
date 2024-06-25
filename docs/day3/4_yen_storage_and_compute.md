@@ -1,7 +1,7 @@
 ---
-title: 3. Understanding Cluster Components 
+title: 4. Understanding Cluster Components 
 layout: page
-nav_order: 3
+nav_order: 4
 parent: Day 3 
 updateDate: 2024-06-24
 ---
@@ -20,6 +20,7 @@ Imagine you write a Python program that loads and filters a CSV file. When worki
 Storage medium can be:
 	- Hard disk drives, HDDs ("spinning disks"), which are slower to access but cheaper because they have moving parts 
 	- Solid-state drives, SSDs (flash-based) which are more expensive but offer faster data read/writes
+
 For example, ZFS project spaces use HDDs but local to each node, we have SSDs which can be accessed at `/tmp` path where a running program can output temporary files and read and write them very quickly.   
 
 ### Kitchen Analogy

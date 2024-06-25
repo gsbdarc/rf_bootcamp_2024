@@ -1,7 +1,7 @@
 ---
-title: 6. Running R Scripts Interactively 
+title: 7. Running R Scripts Interactively 
 layout: page
-nav_order: 6
+nav_order: 7
 parent: Day 3
 updateDate: 2024-06-20
 ---

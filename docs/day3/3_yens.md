@@ -1,7 +1,7 @@
 ---
-title: 2. Yen Servers
+title: 3. Yen Servers
 layout: page
-nav_order: 2
+nav_order: 3
 parent: Day 3 
 updateDate: 2024-06-19
 ---
