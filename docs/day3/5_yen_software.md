@@ -1,13 +1,14 @@
 ---
-title: 6. Yen Software
+title: 5. Yen Software
 layout: page 
-nav_order: 6
+nav_order: 5
 parent: Day 3
 updateDate: 2024-06-19
 ---
 
 # {{ page.title }}
 ---
+
 There's a number of software packages available for use on the Yen servers.  Here is the current list:
 
 * AMPL
@@ -52,7 +53,11 @@ Python, R and Julia, etc the user still needs to install their own libraries or 
 to install packages later in this course. Another advantage of the module system is that several versions of the same sofware
 can coexist and if your research uses a specific version of software you can stick with it even though the newer versions of that software exist.
 
-### See available software
+## See available software
+
+### Login to the Yens
+- `ssh` to the yens
+
 
 Check the current list of available software and versions on the Yen servers with the following command:
 

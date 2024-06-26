@@ -1,7 +1,7 @@
 ---
-title: 7. Running R Scripts Interactively 
+title: 6. Running R Scripts Interactively 
 layout: page
-nav_order: 7
+nav_order: 6
 parent: Day 3
 updateDate: 2024-06-20
 ---
@@ -21,6 +21,13 @@ installed, you can load it in your scripts without the need for repeated install
 Moreover, if you require access to a newer software version that is not currently available on the system, please don't hesitate to [contact DARC](mailto:gsb_darcresearch@stanford.edu) to request its installation. 
 
 ### Installing R packages without a Graphical Interface
+The recommended way to install your R packages is using the command line (not RStudio on JupyterHub and not the terminal in JupyterHub).
+
+### Navigate to Examples Folder
+```bash
+$ cd rf_bootcamp_2024/examples
+$ ls -ltr
+```
 
 Load the R module with the version that you want (R 4.2 is the current default).
 
