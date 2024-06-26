@@ -6,9 +6,12 @@
 #SBATCH -p normal
 #SBATCH -c 12                            # CPU cores (up to 256 on normal partition)
 #SBATCH -t 1:00:00
-#SBATCH -o npv-par-%j.out
+#SBATCH -o out/npv-par-%j.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=your_email@stanford.edu
 
+# Activate venv 
+source venv/bin/activate
+
 # Run python script
-python3 investment-npv-parallel.py
+python 2_investment-parallel.py 
