@@ -38,6 +38,25 @@ See partition limits with:
 $ sacctmgr show qos
 ```
 
+### Constraining my job to specific nodes using node features
+
+Certain nodes may have particular features that your job requires, such
+as a GPU.  These features can be viewed as follows:
+
+```bash
+USER@yen4:~$ sinfo -o "%20N  %5c  %5m  %64f  %10G"
+NODELIST              CPUS   MEMOR  AVAIL_FEATURES                                                    GRES
+yen[11-18]            32+    10315  (null)                                                            (null)
+yen-gpu1              64     25736  GPU_BRAND:NVIDIA,GPU_UARCH:AMPERE,GPU_MODEL:A30,GPU_MEMORY:24GiB  gpu:4
+yen-gpu[2-3]          64     25736  GPU_BRAND:NVIDIA,GPU_UARCH:AMPERE,GPU_MODEL:A40,GPU_MEMORY:48GiB  gpu:4
+```
+
+For example, to ensure that your job will run on a node that has an
+NVIDIA Ampere A40 GPU, you can include the `-C`/`--constraint` option to
+the `sbatch` command or in an `sbatch` script.  Here is a trivial
+example command that demonstrates this: `sbatch -C "GPU_MODEL:A30" -G 1 -p gpu --wrap "nvidia-smi"`
+
+At present, only GPU-specific features exist, but additional node features may be added over time.
 ## Python Example
 This guide will detail how to run a short Python example using <a href="https://pytorch.org/" target="_blank">PyTorch</a> or
  <a href="https://keras.io/about/" target="_blank">Keras</a> for deep learning training. 

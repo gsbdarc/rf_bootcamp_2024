@@ -8,15 +8,33 @@ updateDate: 2024-06-20
 
 # {{ page.title }}
 
+Today we will be working with the scheduled Yens.
+
 The `yen-slurm` is a computing cluster designed to give researchers the ability to run computations that require a large amount of resources without leaving the environment and filesystem of the interactive Yens.
+
+<div class="row">
+    <div class="col-lg-12">
+      <H1> </H1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+     <div class="fontAwesomeStyle"><i class="fas fa-tachometer-alt"></i> Current cluster configuration</div>
+<iframe class="airtable-embed" src="https://airtable.com/embed/shr0XAunXoKz62Zgl?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
+    <div class="col col-md-2"></div>
+  </div>
+
+# Yen Computing Infrastructure
+![](../assets/images/yen-computing-infrastructure.png)
 
 The `yen-slurm` cluster has 11 nodes with over 1,500 CPU cores, 10 TB of memory, and 12 NVIDIA GPU's.
 
-## What is a scheduler?
+## What is a Scheduler?
 
 The `yen-slurm` cluster can be accessed by the [Slurm Workload Manager](https://slurm.schedmd.com/).  Researchers can submit jobs to the cluster, asking for a certain amount of resources (CPU, Memory, GPUs and Time).  Slurm will then manage the queue of jobs based on what resources are available. In general, those who request less resources will see their jobs start faster than jobs requesting more resources.
 
-## Why use a scheduler?
+## Why Use a Scheduler?
 
 A job scheduler has many advantages over the directly shared environment of the yens:
 
@@ -25,38 +43,17 @@ A job scheduler has many advantages over the directly shared environment of the 
 * Run jobs that exceed the community guidelines on the interactive nodes
 * Gold standard for using high-performance computing resources around the world
 
-## How do I use the scheduler?
+## Preparing to Use a Scheduler
 
 First, you should make sure your process can run on the interactive Yen command line.  
 
-Once your process is capable of running on the interactive Yen command line, you will need to create an slurm script.  This script has two major components:
+Once your process is capable of running on the interactive Yen command line, you will need to create a slurm script.  This script has two major components:
 
 * Metadata around your job, and the resources you are requesting
 * The commands necessary to run your process
 
-Here's an example of a submission slurm script, `my_submission_script.slurm`:
 
-```bash
-#!/bin/bash
-
-#SBATCH -J yahtzee
-#SBATCH -o rollcount.csv
-#SBATCH -c 1
-#SBATCH -t 10:00
-#SBATCH --mem=100G
-
-python3 yahtzee.py 100000
-```
-
-The important arguments here are that you request:
-* `SBATCH -c` is the number of CPUs
-* `SBATCH -t` is the amount of time for your job
-* `SBATCH --mem` is the amount of total memory
-
-
-Once your slurm script is written, you can submit it to the server by running `sbatch my_submission_script.slurm`.
-
-## OK - my job is submitted - now what?
+## Looking at Cluster Queue 
 
 You can look at the current job queue by running `squeue`:
 
@@ -76,7 +73,7 @@ Jobs with state (ST) R are running, and PD are pending.  Your job will run based
 
 The Slurm scheduler keeps track of the resources you request, and the resources you use. Frequent under-utilization of CPU and Memory will affect your future job priority.  You should be confident that your job will use all of the resources you request.  It's recommended that you run your job on the interactive Yens, and monitor resource usage to make an educated guess on resource usage.
 
-### Restructure your job into small tasks
+### Restructure Your job into Small Tasks
 
 Small jobs start faster than big jobs. Small jobs likely finish faster too.  If your job requires doing the same process many times (i.e. OCR'ing many PDFs), it will benefit you to setup your job as many small jobs.
 
@@ -108,7 +105,7 @@ The four partitions have the following limits:
 
 | Partition      | CPU Limit Per User | Memory Limit           | Max Memory Per CPU (default)  | Time Limit (default) |
 | -------------- | :----------------: | :--------------------: | :----------------------------:| :-------------------:|
-|  normal*       |    256             | 3 TB                   |   24 GB (4 GB)                | 2 days  (2 hours)    |
+|  normal       |    256             | 3 TB                   |   24 GB (4 GB)                | 2 days  (2 hours)    |
 |  dev           |    2               | 48 GB                  |   24 GB (4 GB)                | 2 hours (1 hour)     |
 |  long          |    50              |  1.2 TB                |   24 GB (4 GB)                | 7 days (2 hours)     |
 |  gpu           |    64              |  256 GB                |   24 GB (4 GB)                | 1 day (2 hours)      |
@@ -154,44 +151,3 @@ yen4 :  3 Users | CPU [####                20%] | Memory [###                 15
 yen5 :  1 Users | CPU [                     1%] | Memory [                     3%] | updated 2024-06-20-07:58:02
 yen-slurm : 11 jobs, 5 pending | 3 CPUs allocated (1%) | 100G Memory Allocated (2%) | updated 2024-06-20-07:58:02
 ```
-
-### When will my job start?
-
-You can ask the scheduler using `squeue --start`, and look at the `START_TIME` column.
-
-```bash
-USER@yen4:~$ squeue --start
-
-JOBID PARTITION     NAME     USER ST          START_TIME  NODES SCHEDNODES           NODELIST(REASON)
-112    normal yahtzeem  astorer PD 2020-03-05T14:17:40      1 yen11                (Resources)
-113    normal yahtzeem  astorer PD 2020-03-05T14:27:00      1 yen11                (Priority)
-114    normal yahtzeem  astorer PD 2020-03-05T14:37:00      1 yen11                (Priority)
-115    normal yahtzeem  astorer PD 2020-03-05T14:47:00      1 yen11                (Priority)
-116    normal yahtzeem  astorer PD 2020-03-05T14:57:00      1 yen11                (Priority)
-117    normal yahtzeem  astorer PD 2020-03-05T15:07:00      1 yen11                (Priority)
-```
-
-### How do I cancel my job on Yen-Slurm?
-
-The `scancel JOBID` command will cancel your job.  You can find the unique numeric `JOBID` of your job with `squeue`.
-You can also cancel all of your running and pending jobs with `scancel -u USERNAME` where `USERNAME` is your username.
-
-### Constraining my job to specific nodes using node features
-
-Certain nodes may have particular features that your job requires, such
-as a GPU.  These features can be viewed as follows:
-
-```bash
-USER@yen4:~$ sinfo -o "%20N  %5c  %5m  %64f  %10G" 
-NODELIST              CPUS   MEMOR  AVAIL_FEATURES                                                    GRES
-yen[11-18]            32+    10315  (null)                                                            (null)
-yen-gpu1              64     25736  GPU_BRAND:NVIDIA,GPU_UARCH:AMPERE,GPU_MODEL:A30,GPU_MEMORY:24GiB  gpu:4
-yen-gpu[2-3]          64     25736  GPU_BRAND:NVIDIA,GPU_UARCH:AMPERE,GPU_MODEL:A40,GPU_MEMORY:48GiB  gpu:4
-```
-
-For example, to ensure that your job will run on a node that has an
-NVIDIA Ampere A40 GPU, you can include the `-C`/`--constraint` option to
-the `sbatch` command or in an `sbatch` script.  Here is a trivial
-example command that demonstrates this: `sbatch -C "GPU_MODEL:A30" -G 1 -p gpu --wrap "nvidia-smi"`
-
-At present, only GPU-specific features exist, but additional node features may be added over time.

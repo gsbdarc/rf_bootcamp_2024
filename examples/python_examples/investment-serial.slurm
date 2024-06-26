@@ -10,5 +10,8 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=your_email@stanford.edu
 
+# Activate venv 
+source venv/bin/activate
+
 # Run python script
-python3 investment-npv-serial.py
+python investment-npv-serial.py

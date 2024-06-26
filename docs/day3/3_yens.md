@@ -34,3 +34,5 @@ As a research fellow, you, by default already have access to these servers.
 
 # Yen Computing Infrastructure
 ![](../assets/images/yen-computing-infrastructure.png) 
+
+Today, we are using only the interactive Yens. Stay tuned for scheduled Yens tomorrow.
