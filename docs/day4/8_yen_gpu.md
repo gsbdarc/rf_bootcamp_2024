@@ -236,8 +236,7 @@ yarl                      1.9.4
 If you need additional packages installed, you can `pip install` them to your `~/.local` since this global pytorch `venv` 
 is not user writable. 
 
-### Copy Python Script
-This example uses the MNIST dataset for image classification, and consists of a simple fully connected neural network 
+The PyTorch example script uses the MNIST dataset for image classification, and consists of a simple fully connected neural network 
 with one hidden layer. 
 
 We will run the [`mnist.py`](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/mnist.py) script on the GPU node. 
@@ -285,38 +284,38 @@ You should see that one of the four GPUs is being utilized (under GPU-Util colum
 is `python`:
 
 ```bash
-Tue May  9 15:58:57 2023
-+---------------------------------------------------------------------------------------+
-| NVIDIA-SMI 530.30.02              Driver Version: 530.30.02    CUDA Version: 12.1     |
-|-----------------------------------------+----------------------+----------------------+
-| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                                         |                      |               MIG M. |
-|=========================================+======================+======================|
-|   0  NVIDIA A30                      On | 00000000:17:00.0 Off |                    0 |
-| N/A   34C    P0               33W / 165W|   1073MiB / 24576MiB |      3%      Default |
-|                                         |                      |             Disabled |
-+-----------------------------------------+----------------------+----------------------+
-|   1  NVIDIA A30                      On | 00000000:65:00.0 Off |                    0 |
-| N/A   31C    P0               31W / 165W|      0MiB / 24576MiB |      0%      Default |
-|                                         |                      |             Disabled |
-+-----------------------------------------+----------------------+----------------------+
-|   2  NVIDIA A30                      On | 00000000:CA:00.0 Off |                    0 |
-| N/A   32C    P0               29W / 165W|      0MiB / 24576MiB |      0%      Default |
-|                                         |                      |             Disabled |
-+-----------------------------------------+----------------------+----------------------+
-|   3  NVIDIA A30                      On | 00000000:E3:00.0 Off |                    0 |
-| N/A   33C    P0               28W / 165W|      0MiB / 24576MiB |      0%      Default |
-|                                         |                      |             Disabled |
-+-----------------------------------------+----------------------+----------------------+
+Wed Jun 26 12:16:41 2024
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.90.07              Driver Version: 550.90.07      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A30                     Off |   00000000:17:00.0 Off |                    0 |
+| N/A   35C    P0             31W /  165W |     1073MiB / 24576MiB |      3%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA A30                     Off |   00000000:65:00.0 Off |                    0 |
+| N/A   33C    P0             31W /  165W |       1MiB /  24576MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA A30                     Off |   00000000:CA:00.0 Off |                    0 |
+| N/A   32C    P0             29W /  165W |       1MiB /  24576MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA A30                     Off |   00000000:E3:00.0 Off |                    0 |
+| N/A   34C    P0             29W /  165W |       1MiB /  24576MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
 
-+---------------------------------------------------------------------------------------+
-| Processes:                                                                            |
-|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
-|        ID   ID                                                             Usage      |
-|=======================================================================================|
-|    0   N/A  N/A   3927692      C   python                                     1070MiB |
-+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A   3927692      C   python                                       1070MiB |
++-----------------------------------------------------------------------------------------+
 ```
 
 `nvidia-smi` also tells you how much GPU RAM is used by the process. When training LLM or other models, it's important to fully utilize the GPU RAM so that the training is optimized. So if the GPU has 24 G of RAM, we can adjust the batch size to use as much data as fits into the GPU RAM and monitor `nvidia-smi` output so see how much RAM is used while the job is running. If the batch size is too large, your job will crash with OOM error. Try reducing the batch size then try again (while monitoring GPU memory usage).
