@@ -22,7 +22,7 @@ ncore = 12
 
 Consider a slightly modified program, [2_investment-parallel.py](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/2_investment-parallel.py). 
 
-**Important**: when using the yens, you must specify the number of cores in `Pool()` call. Otherwise, your python program would see all cores on the node and try to use them. But if you only request 10 cores in slurm and `Pool()` tries to use 256, bad things happen and your program will likely to get killed. Match the number of cores in the `Pool()` call to the number of cores you request in the submit script.`
+**Important**: when using the yens, you must specify the number of cores in `Pool()` call. Otherwise, your python program would see all cores on the node and try to use them. But if you only request 10 cores in slurm and `Pool()` tries to use 256, bad things happen and your program will likely to get killed. Match the number of cores in the `Pool()` call to the number of cores you request in the submit script.
 
 ```python
 # create a multiprocessing pool to run trials in parallel
