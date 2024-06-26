@@ -4,17 +4,17 @@
 
 #SBATCH -J train-gpu
 #SBATCH -p gpu
-#SBATCH -c 20
+#SBATCH -c 10
 #SBATCH -N 1
 #SBATCH -t 1-             # limit of 1 day runtime
-#SBATCH -G 1              # limit of 2 GPU's per user
-#SBATCH -o train-gpu-%j.out
+#SBATCH -G 1              # limit of 4 GPUs per user
+#SBATCH -o out/train-gpu-%j.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=your_email@stanford.edu
 
-# load pytorch module 
+# Load pytorch module 
 ml pytorch
 
-# run training script on GPU
+# Run training script on GPU
 python mnist.py
 
