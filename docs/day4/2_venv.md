@@ -14,7 +14,7 @@ Python environments are a foundational aspect of professional Python development
 
 Managing Python virtual environments can be achieved through various tools, each offering unique features and benefits. The most commonly used tools include:
 
-* `venv`: built into Python 3.3 and later,
+* `venv`: built into Python 3.3 and later. (Recommended)
 * `Virtualenv`: third-party tool that supports both newer and older Python versions, 
 * [Anaconda](https://www.anaconda.com/products/distribution): third-party tool popular in data science,
 * `Pipenv`: third-party tool that combines package management with virtual environment management.
@@ -41,12 +41,12 @@ We highly recommend using `venv`, Python’s built-in tool for creating virtual 
 
 * **Ease of Reproducibility**: `venv` allows for easy replication of environments by using a `requirements.txt` file, ensuring that the code remains reproducible and consistent regardless of the platform.
 
+* **Terminal Agnostic**: `venv` will allow you to work in both JuputerHub Terminal, Linux Terminal, and Slurm through a single unified location
+
 
 ## Creating a New Virtual Environment with `venv`
 
-To make the virtual environment sharable, we make it in a shared location on the Yens such as a faculty project directory, and not in user's home. The virtual environment needs to be created once and all team members with access to the project directory will able to activate and use it. 
-
-Let's navigate to the shared project directory:
+Let's navigate to a project directory:
 
 ```bash
 $ cd <path/to/project>
@@ -56,37 +56,36 @@ where `<path/to/project>` is the shared project location on ZFS.
 Create a new virtual environment:
 
 ```bash
-$ /usr/bin/python3  -m venv .venv
+$ /usr/bin/python3  -m venv venv # Note venv is a customizable name
 ```
-where we make a hidden directory `.venv` inside the project directory. 
+where we make a hidden directory `venv` inside the project directory. 
 
 ## Activating a New Virtual Environment 
 
 Next, we activate the virtual environment:
 ```bash
-$ source .venv/bin/activate
+$ source venv/bin/activate
 ```
 
-You should see `(.venv):` prepended to the prompt: 
+You should see `(venv):` prepended to the prompt: 
 ```bash
-(.venv): 
+(venv): 
 ```
 
 Check Python version:
 
-```
-$ python --version
-Python 3.10.12
+```bash
+$ which python
+/path/to/env/venv/bin/python
 ```
 
-## Installing Python Packages into the New Virtual Environment
+## Installing Python Packages within the New Virtual Environment
 Install any python package with `pip`:
 
 ```bash
-$ pip install <package>
+(venv) $ pip install <package>
 ```
 
-where `<package>` is a Python package (or list) to install, such as `numpy`, `pandas`, etc.
 
 ## Making the Virtual Environment into a JupyterHub Kernel 
 Install `ipykernel` package before installing the new environment as a kernel on JupyterHub:
@@ -101,53 +100,31 @@ $ python -m ipykernel install --user --name=<kernel-name>
 ```
 where `<kernel-name>` is the name of the kernel on JupyterHub.
 
-## Running Python Scripts Using Virtual Environment
-Using your environment is very simple - as long as your environment is activated, you can run python normally:
-
+Example 
+```bash
+$ python -m ipykernel install --user --name=venv
 ```
-(.venv) USER@yenX:$ python <my_script.py> 
-```
-where `<my_script.py>` is your Python script.
 
-The Python command will be specific to your environment. You can troubleshoot this with the `which` command:
+![](../assets/images/jupyter_venv.png)
 
-```
-(.venv) USER@yenX:$ which python
-/path/to/env/bin/python
-```
-where `/path/to/env/bin/python` is the path to the Python in your environment.
+## Shared the Environment
 
-## Activating a Shared Virtual Environment That Has Already Been Created 
-Simply navigate to the shared project directory and activate the environment:
+Environments can get quite large and take of lots of space depending on the project. An easy way to share them is you share the requirements.txt file which is a list of all the libaries and versions
+
+```bash 
+(venv)$  pip freeze > requirements.txt 
+```
+
+![](../assets/images/requirements.png)
+
+To then copy an environment onto another area, first create a new environment and install packages
 
 ```bash
-$ cd <path/to/project>
-$ source .venv/bin/activate
+$ usr/bin/python3 -m venv new_venv
+$ source new_venv/bin/activate
+(new_venv)$ pip install -r requirements.txt 
 ```
-This assumes the virtual environment has been previously installed in the project directory under `.venv` subdirectory.
 
-## Saving and Sharing Virtual Environment
-
-One of the big advantages of virtual environments is sharing the environments. This is done by saving the environment to a file.
-
-The tool we are going to use is called `pipreqs` and we can install it with `pip`:
-
-```
-$ pip install pipreqs
-```
-We then use `pipreqs` to generate a `requirements.txt` that captures all package requirements for recreating the virtual environment. If all of the Python scripts live in `src` directory, `pipreqs` will identify all the packages that are used in the scripts:
-
-```
-$ pipreqs <path/to/project/src>
-```
-The `requirements.txt` will be automatically generated and saved in `<path/to/project/src>` directory. You will now have a `requirements.txt` file with all the necessary information for `pip` to build your environment.
-
-If you want to load this environment on a new server, you can run the following command:
-
-```
-$ source <env_name>/bin/activate
-(<env_name>)$ pip install -r <path/to>/requirements.txt
-```
 
 ### Deactivating the Virtual Environment
 You can deactivate the virtual environment with:
@@ -162,4 +139,26 @@ If you would like to delete the previouly created virtual enviroment, simply del
 $ rm -rf .venv
 ```
 
-**Caution**: Before deleting a virtual environment, especially in a shared project setting, ensure that all team members are informed and agree with the decision. Deleting an environment is irreversible and may impact others who rely on the same setup for development, testing, or deployment. Always verify that the environment is no longer needed for the project's continuity and that any valuable configurations have been safely backed up or migrated.
+If you created a Jupyter kernal you will also need to remove that with the following command from your home
+
+```bash 
+$ rm -r ~/.local/share/jupyter/kernels/venv
+```
+
+# Exercise
+1. Navigate to examples/python_examples
+2. Create a new virtual environment name **venv**
+3. Activate the Environment
+4. Install the packages in requirements.txt
+
+<details>
+<summary>Click for answer</summary>
+
+```bash
+$ cd examples/python_examples
+$ python3 -m venv venv
+$ source venv/bin/activate
+(venv) $ pip install -r requirements.txt
+```
+
+</details>
