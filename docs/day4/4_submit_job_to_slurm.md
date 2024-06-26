@@ -12,7 +12,7 @@ updateDate: 2024-06-26
 ## Running Python Script on the Command Line 
 Navigate to the `examples` directory. Just as we ran the R script on the interactive yen nodes, we can run the Python script on the command line.  
 
-Let's run a python version of the script, `investment-npv-serial.py`, which is a serial version of the script that does not use multiprocessing.  View the complete script [here](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/investment-npv-serial.py).
+Let's run a python version of the script, `1_investment-serial.py`, which is a serial version of the script that does not use multiprocessing.  View the complete script [here](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/1_investment-serial.py).
 
 Activate your virtual python environment, `venv`, first:
 
@@ -23,7 +23,7 @@ $ source venv/bin/activate
 
 Run the script like so: 
 ```bash
-$ python investment-npv-serial.py
+$ python 1_investment-serial.py
 ```
 
 The output should look like:
@@ -43,13 +43,21 @@ max      592.636589
 
 ## Submit Serial Script to the Scheduler
 
-We'll prepare a submission [slurm script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/investment-serial.slurm), called `investment-serial.slurm` and submit it to the scheduler. Edit the slurm script to include
+We'll prepare a submission [slurm script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/1_investment-serial.slurm), called `1_investment-serial.slurm` and submit it to the scheduler. Edit the slurm script to include
 your email address.
 
-Then submit the script:
+The important arguments here are that you request:
+* `#SBATCH -p` is the partition you are submitting your job to 
+* `#SBATCH -c` is the number of CPUs
+* `#SBATCH -t` is the amount of time for your job
+* `#SBATCH --mem` is the amount of total memory
+
+
+We are going to make an `out` directory for storing all the output files, then submit the script:
 
 ```bash
-$ sbatch investment-serial.slurm
+$ mkdir -p out
+$ sbatch 1_investment-serial.slurm
 ```
 
 You should see a similar output:
@@ -90,7 +98,7 @@ The script should take less than a minute to complete. Look at the slurm emails 
 Since the job is executed in batch mode, you will not see anything printed to the screen. All print statements go into the specified output file. While the job is running, you can look at the output file with:
 
 ```bash
-$ tail -f *out
+$ tail -f out/npv-serial*out
 ```
 
 ### How Do I Cancel My Job on Yen-Slurm?
