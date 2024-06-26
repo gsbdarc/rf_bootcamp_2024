@@ -3,7 +3,7 @@ title: 7. Job Arrays
 layout: page
 nav_order: 7
 parent: Day 4
-updateDate: 2024-06-20
+updateDate: 2024-06-26
 ---
 
 # {{ page.title }}
@@ -12,44 +12,22 @@ One of Slurm's notable features is its ability to manage job arrays.
 
 A Slurm job array is a convenient and efficient way to submit and manage a group of related jobs as a single entity. Instead of submitting each job individually, you can use <a href="https://slurm.schedmd.com/job_array.html" target="_blank">job arrays</a> to submit multiple similar tasks with a single command, making it easier to handle large-scale computations and parallel processing.
 
-In this guide, we will explore the concept of Slurm job arrays and  demonstrate how to leverage this feature for batch job processing, simplifying the management of repetitive tasks and improving overall productivity on the Yen environment.
+In this section, we will explore the concept of Slurm job arrays and  demonstrate how to leverage this feature for batch job processing, simplifying the management of repetitive tasks and improving overall productivity on the Yen environment.
 
-Let's take a look at a python script that will be run as an array of tasks, `investment-npv-job-task.py`.
+Let's take a look at a [python script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/4_investment-job-task.py), `4_investment-job-task.py`, that will be run as an array of tasks.
 
-```python
-import sys, time
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
+The script expects two command line arguments - cashflows and a discount rate and outputs NPV value for those inputs. Alternatively to using `multiprocessing` and `map()` function in `2_investment-parallel.py` script, we can compute NPV values over different inputs to the script that only computes the NPV value for 2 given inputs (cashflows and a discount rate). 
 
-np.errstate(over='ignore')
+A job array is a common scheme for parameter sweep tasks. Each job array task will run the same script but with different inputs. 
 
-# pick up cashflows and discount rate from command line
-args = sys.argv[1] # this will be a long string that we need to convert into a cashflows vector of floats and discount rate as a float
-args_list = args.split(',')
-
-# Convert the list of strings to a list of floats
-cashflows = [float(x) for x in args_list[:-1]]
-discount_rate = float(args_list[-1])
-
-# define a function for NPV calculation
-def npv_calculation(cashflows, discount_rate):
-    # ignore overflow warnings temporarily
-    with np.errstate(over = 'ignore'):
-        # calculate NPV using the formula
-        npv = np.sum(cashflows / (1 + discount_rate) ** np.arange(len(cashflows)))
-        return npv
-
-results = npv_calculation(cashflows, discount_rate)
-print(results)
-```
-
-The script expects two command line arguments - cashflows and a discount rate and outputs NPV value for those inputs. Alternatively to using `multiprocessing` and `map()` function in `investment-npv-parallel.py` script, we can compute NPV values over different inputs. Thus, a job array is a common scheme for parameter sweep tasks. Each job array task will run the same script but with different inputs. 
-
-To prepare inputs, we first run `write_job_array_inputs.py` script to write 100 lines of cashflows and discount rates that will be passed as inputs. Each line corresponds to inputs for one job array task. 
+To prepare inputs, we first run `write_job_array_inputs.py` script to write 100 lines of cashflows and discount rates that will be passed as inputs to `4_investment-job-task.py` script later. Each line corresponds to inputs for one job array task. 
 
 ```bash
-$ python3 write_job_array_inputs.py
+# Activate venv if not activated yet
+$ source venv/bin/activate
+
+# Run helper script to generate 100 inputs for job array
+$ python write_job_array_inputs.py
 ```
 
 You should see the following output:
@@ -57,38 +35,16 @@ You should see the following output:
 100 lines of data have been written to inputs_to_job_array.csv.
 ```
 
-Next, we'll prepare a submission script called `investment-job-array.slurm`.
+Next, we'll submit a [job array script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/4_investment-job-array.slurm), called `4_investment-job-array.slurm`, that runs 100 tasks in parallel using one line from input file to pass the value of arguments to the script.
+
+This script extracts the line number that corresponds to the value of `$SLURM_ARRAY_TASK_ID` environment variable -- in this case, 1 through 100. When we submit this one slurm script to the scheduler, it will become 100 jobs running all at once with each task executing the `4_investment-job-task.py` script with different inputs. 
+
+Another advantage of job arrays instead of running one big scipt is that if some but not all job tasks have failed, you can resubmit only those by using the failed array indices. For example, if the inputs for job task 50 produced NaN and job failed, we can fix the inputs, then resumbit the slurm script with `--array=50-50` to rerun only that task.
+
+To submit the script that executes 100 jobs, run:
 
 ```bash
-#!/bin/bash
-
-# Example of running python script as a job array
-
-#SBATCH -J inv-array
-#SBATCH --array=1-100
-#SBATCH -p normal
-#SBATCH -c 1                            # CPU cores per task (up to 256 on normal partition)
-#SBATCH -t 1:00:00
-#SBATCH -o inv-array-%a.out
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=your_email@stanford.edu
-
-# Read in a specified line number from input file
-# line number corresponds to job array task ID
-export NUM=$SLURM_ARRAY_TASK_ID
-export INPUTS=$(sed "${NUM}q;d" inputs_to_job_array.csv)
-
-# Run every job array task in parallel
-python3 investment-npv-job-task.py $INPUTS
-```
-
-This script extracts the line number that corresponds to the value of `$SLURM_ARRAY_TASK_ID` environment variable -- in this case, 1 through 100. When we submit this one slurm script to the scheduler, it will become 100 jobs running all at once with each task executing the `investment-npv-job-task.py` script with only those inputs that correspond to one line of inputs from the input file. 
-
-
-To submit the script, run:
-
-```bash
-$ sbatch investment-job-array.slurm
+$ sbatch 4_investment-job-array.slurm 
 ```
 
 You should then see 100 jobs in the queue. 
@@ -97,8 +53,9 @@ Each job task produces an out file with a computed NPV value.
 
 
 ## Job Dependency
-We can impose job dependency to combine all of the NPV results into one CSV file after all of the tasks have finished.
-After you submit the `investment-job-array.slurm` script, you will know the job array ID so you can then run:
+Another useful Slurm feature is job dependency, where you can specify to run one job *only* after the first job finished okay (without errors) to chain script executions that way. 
+For example, we impose job dependency to combine all of the NPV results into one CSV file only *after* all of the tasks have finished (without errors).
+After you submit the `4_investment-job-array.slurm` script, you will know the job array ID so you can then run:
 
 ```bash
 $ srun --dependency=afterok:<array_job_id> ./combine_array_results.sh
