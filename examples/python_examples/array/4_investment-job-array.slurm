@@ -7,7 +7,7 @@
 #SBATCH -p normal
 #SBATCH -c 1                            # CPU cores per task (up to 256 on normal partition)
 #SBATCH -t 1:00:00
-#SBATCH -o inv-array-%a.out
+#SBATCH -o out/inv-array-%a.out
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=your_email@stanford.edu
 
@@ -16,6 +16,9 @@
 export NUM=$SLURM_ARRAY_TASK_ID
 export INPUTS=$(sed "${NUM}q;d" inputs_to_job_array.csv)
 
+# Activate venv 
+source ../venv/bin/activate
+
 # Run every job array task in parallel
-python3 investment-npv-job-task.py $INPUTS
+python 4_investment-job-task.py $INPUTS
 

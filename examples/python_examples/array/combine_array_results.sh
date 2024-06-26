@@ -1,11 +1,5 @@
 #!/bin/sh
 
-# Create the "out" directory if it doesn't exist
-mkdir -p ./out
-
-# Move all .out from array tasks into out folder
-mv inv-array-*.out out/
-
 cd out
 
 # read in data 

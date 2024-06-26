@@ -14,7 +14,7 @@ A Slurm job array is a convenient and efficient way to submit and manage a group
 
 In this section, we will explore the concept of Slurm job arrays and  demonstrate how to leverage this feature for batch job processing, simplifying the management of repetitive tasks and improving overall productivity on the Yen environment.
 
-Let's take a look at a [python script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/4_investment-job-task.py), `4_investment-job-task.py`, that will be run as an array of tasks.
+Let's take a look at a [python script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/array/4_investment-job-task.py), `4_investment-job-task.py`, that will be run as an array of tasks.
 
 The script expects two command line arguments - cashflows and a discount rate and outputs NPV value for those inputs. Alternatively to using `multiprocessing` and `map()` function in `2_investment-parallel.py` script, we can compute NPV values over different inputs to the script that only computes the NPV value for 2 given inputs (cashflows and a discount rate). 
 
@@ -26,6 +26,12 @@ To prepare inputs, we first run `write_job_array_inputs.py` script to write 100 
 # Activate venv if not activated yet
 $ source venv/bin/activate
 
+# Navigate to array subdirectory
+$ cd array
+
+# Make out directory for output files
+$ mkdir out
+
 # Run helper script to generate 100 inputs for job array
 $ python write_job_array_inputs.py
 ```
@@ -35,7 +41,7 @@ You should see the following output:
 100 lines of data have been written to inputs_to_job_array.csv.
 ```
 
-Next, we'll submit a [job array script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/4_investment-job-array.slurm), called `4_investment-job-array.slurm`, that runs 100 tasks in parallel using one line from input file to pass the value of arguments to the script.
+Next, we'll submit a [job array script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/python_examples/array/4_investment-job-array.slurm), called `4_investment-job-array.slurm`, that runs 100 tasks in parallel using one line from input file to pass the value of arguments to the script.
 
 This script extracts the line number that corresponds to the value of `$SLURM_ARRAY_TASK_ID` environment variable -- in this case, 1 through 100. When we submit this one slurm script to the scheduler, it will become 100 jobs running all at once with each task executing the `4_investment-job-task.py` script with different inputs. 
 
@@ -62,3 +68,13 @@ $ srun --dependency=afterok:<array_job_id> ./combine_array_results.sh
 ```
 
 Replace `<array_job_id>` with your job array ID. This command will ensure that all job array tasks have finished with OK status and then run the shell script to combine the results. 
+
+## Why Use `srun`?
+`srun` respects job dependencies and ensures that the script runs only after the specified conditions are met, which might not be as straightforward if the script is executed directly.
+
+When you use `srun --dependency=afterok:<jobid> ./combine_array_results.sh`, Slurm will:
+
+- Wait for the array job to complete successfully.
+- Allocate resources for the new job.
+- Execute `combine_array_results.sh` on a compute yen-slurm node.
+
