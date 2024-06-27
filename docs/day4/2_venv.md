@@ -15,11 +15,11 @@ Python environments are a foundational aspect of professional Python development
 Managing Python virtual environments can be achieved through various tools, each offering unique features and benefits. The most commonly used tools include:
 
 * `venv`: built into Python 3.3 and later. (Recommended)
-* `Virtualenv`: third-party tool that supports both newer and older Python versions, 
+* `virtualenv`: third-party tool that supports both newer and older Python versions, 
 * [Anaconda](https://www.anaconda.com/products/distribution): third-party tool popular in data science,
 * `Pipenv`: third-party tool that combines package management with virtual environment management.
 
-The choice of tool often depends on the specific needs of a project and the preferences of a development team. For instance, `venv` is typically sufficient for straightforward Python projects, while `Virtualenv` might be preferred for projects requiring compatibility with older Python versions or more granular control over the environment.
+The choice of tool often depends on the specific needs of a project and the preferences of a development team. For instance, `venv` is typically sufficient for straightforward Python projects, while `virtualenv` might be preferred for projects requiring compatibility with older Python versions or more granular control over the environment.
 
 Regardless of the tool selected, the best practices for using Python virtual environments involve:
 1. **Creating a New Environment for Each Project**: This ensures that each project has its own set of dependencies.
@@ -41,7 +41,7 @@ We highly recommend using `venv`, Python’s built-in tool for creating virtual 
 
 * **Ease of Reproducibility**: `venv` allows for easy replication of environments by using a `requirements.txt` file, ensuring that the code remains reproducible and consistent regardless of the platform.
 
-* **Terminal Agnostic**: `venv` will allow you to work in both JuputerHub Terminal, Linux Terminal, and Slurm through a single unified location
+* **Terminal Agnostic**: `venv` will allow you to work in both JupyterHub Terminal, Linux Terminal, and Slurm through a single unified location
 
 
 ## Creating a New Virtual Environment with `venv`
@@ -107,17 +107,18 @@ $ python -m ipykernel install --user --name=venv
 
 ![](../assets/images/jupyter_venv.png)
 
-## Shared the Environment
+## Sharing the Environment
 
-Environments can get quite large and take of lots of space depending on the project. An easy way to share them is you share the requirements.txt file which is a list of all the libaries and versions
+Environments can get quite large and take up lots of space depending on the project. An easy way to share them is you share the requirements.txt file which is a list of all the libraries and versions
 
 ```bash 
 (venv)$  pip freeze > requirements.txt 
 ```
+This will be different depending on which packages you install and can help users run the code you developed using that environment
 
 ![](../assets/images/requirements.png)
 
-To then copy an environment onto another area, first create a new environment and install packages
+To then replicated an environment onto another area, first create a new environment and install packages
 
 ```bash
 $ usr/bin/python3 -m venv new_venv
@@ -125,6 +126,8 @@ $ source new_venv/bin/activate
 (new_venv)$ pip install -r requirements.txt 
 ```
 
+!!! warning
+    Once the virtual environments are created they CANNOT be moved
 
 ### Deactivating the Virtual Environment
 You can deactivate the virtual environment with:
@@ -133,13 +136,13 @@ $ deactivate
 ```
 
 ### Removing the Virtual Environment
-If you would like to delete the previouly created virtual enviroment, simply delete the environment directory since `venv` environment is essentially a directory containing files and folders. 
+If you would like to delete the previously created virtual enviroment, simply delete the environment directory since `venv` environment is essentially a directory containing files and folders. 
 
 ```
 $ rm -rf .venv
 ```
 
-If you created a Jupyter kernal you will also need to remove that with the following command from your home
+If you created a Jupyter kernel you will also need to remove that with the following command from your home
 
 ```bash 
 $ rm -r ~/.local/share/jupyter/kernels/venv
