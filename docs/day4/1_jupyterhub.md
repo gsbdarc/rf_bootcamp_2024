@@ -24,7 +24,7 @@ You will need to login with your SUNet credentials, and then click on `Start My 
 
 ![](../assets/images/launch-hub.png)
 
-{% include important.html content="JupyterHub instances on each `yen` server are independent of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`." %}
+{% include important.html content="JupyterHub instances on each `yen` server are INDEPENDENT of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`." %}
 
 {% include warning.html content="JupyterHub does not work well on Safari - we recommend using a different browser." %}
 
@@ -39,7 +39,7 @@ The JupyterLab interface looks like:
 The front panel has a Launcher interface from which you can start notebooks with different language kernels and custom environment kernels.
 
 ### Notebook
-![](../assets/images/notebooks.png)
+![](../assets/images/jupyternotebook.png)
 
 Notebooks allow you to write code and execute it on the yens in your web browser. 
 Code is written into cells, which can be run in any order, on demand. 
@@ -50,12 +50,12 @@ Contact the [DARC team](mailto:gsb_darcresearch@stanford.edu) if you have a lang
 
 ### RStudio
 -----------
-![](/assets/images/rstudio.png)
+![](../assets/images/rstudio.png)
 
 RStudio GUI is also available! Clicking this link will bring up a new tab with a web-based RStudio on the Yens.
 
 If you opened up a notebook and want to get back to the Launcher interface to launch other software as well, click the "+" button in the upper left corner:
-![](/assets/images/launcher.png)
+![](../assets/images/launcher.png)
 
 
 ### Console
@@ -111,7 +111,7 @@ To download, right click the file you would like to download to your local machi
 ### Installing Packages
 -----------------------
 JupyterHub loads packages found in your `~/.local/` directory. 
-If you wish to install Python packages to be available in a JupyterHub notebook, we recommend using <a href="/training/5_python_env.html" target="_blank">Python `venv`</a> environment. 
+If you wish to install Python packages to be available in a JupyterHub notebook, we recommend using <a href="https://rcpedia.stanford.edu/topicGuides/pythonEnv.html" target="_blank">Python `venv`</a> environment. 
 
 The following limits will be imposed on JupyterHub servers:
 
@@ -132,7 +132,7 @@ JupyterHub instance will shut down after 3 hours idle (no notebooks actively run
 
 {% include warning.html content="Idle servers shut down will not retain any local packages or variables in the notebooks.  Please save your output." %}
 
-If your processes require more than these limits, reach out to the <a href="/services/researchSupportRequest.html" target="_blank">DARC team</a> for support.
+If your processes require more than these limits, reach out to the <a href="https://rcpedia.stanford.edu/services/researchSupportRequest.html" target="_blank">DARC team</a> for support.
 
 ### Text File Editor
 -------------------------
