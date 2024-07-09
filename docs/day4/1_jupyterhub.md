@@ -1,5 +1,5 @@
 ---
-title: 1. JupyterHub on the yens 
+title: 1. JupyterHub on the Yens 
 layout: page
 nav_order: 1
 parent: Day 4
@@ -24,9 +24,9 @@ You will need to login with your SUNet credentials, and then click on `Start My 
 
 ![](../assets/images/launch-hub.png)
 
- **IMPORTANT:** JupyterHub instances on each `yen` server are INDEPENDENT of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`." 
+ **IMPORTANT:** JupyterHub instances on each `yen` server are INDEPENDENT of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`.
 
-**WARNING:** JupyterHub does not work well on Safari - we recommend using a different browser."
+**WARNING:** JupyterHub does not work well on Safari - we recommend using a different browser.
 
 ## Features of JupyterHub
 
@@ -101,7 +101,7 @@ Double click on the `zfs` directory in your home directory to navigate to your Z
 ![](../assets/images/jupyter_upload.png)
 
 One very useful feature of JupyterHub is the ability to upload and download files from ZFS. 
-First, make sure you are in the proper directory.  Then, to upload, click the up arrow on the top left of your screen to select a file from your local machine ot upload to the Yens.
+First, make sure you are in the proper directory. Then, to upload, click the up arrow on the top left of your screen to select a file from your local machine to upload to the Yens.
 
 ![](../assets/images/jupyter_download.png "File Download")
 
@@ -112,6 +112,9 @@ To download, right click the file you would like to download to your local machi
 -----------------------
 JupyterHub loads packages found in your `~/.local/` directory. 
 If you wish to install Python packages to be available in a JupyterHub notebook, we recommend using <a href="https://rcpedia.stanford.edu/topicGuides/pythonEnv.html" target="_blank">Python `venv`</a> environment. 
+
+
+### Compute Limits
 
 The following limits will be imposed on JupyterHub servers:
 
@@ -130,7 +133,7 @@ The following limits will be imposed on JupyterHub servers:
 
 JupyterHub instance will shut down after 3 hours idle (no notebooks actively running code).
 
-{% include warning.html content="Idle servers shut down will not retain any local packages or variables in the notebooks.  Please save your output." %}
+**WARNING:** Idle servers shut down will not retain any local packages or variables in the notebooks.  Please save your output.
 
 If your processes require more than these limits, reach out to the <a href="https://rcpedia.stanford.edu/services/researchSupportRequest.html" target="_blank">DARC team</a> for support.
 

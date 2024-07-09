@@ -15,8 +15,8 @@ Python environments are a foundational aspect of professional Python development
 Managing Python virtual environments can be achieved through various tools, each offering unique features and benefits. The most commonly used tools include:
 
 * `venv`: built into Python 3.3 and later. (Recommended)
-* `virtualenv`: third-party tool that supports both newer and older Python versions, 
-* [Anaconda](https://www.anaconda.com/products/distribution): third-party tool popular in data science,
+* `virtualenv`: third-party tool that supports both newer and older Python versions.
+* [Anaconda](https://www.anaconda.com/products/distribution): third-party tool popular in data science.
 * `Pipenv`: third-party tool that combines package management with virtual environment management.
 
 The choice of tool often depends on the specific needs of a project and the preferences of a development team. For instance, `venv` is typically sufficient for straightforward Python projects, while `virtualenv` might be preferred for projects requiring compatibility with older Python versions or more granular control over the environment.
@@ -139,7 +139,7 @@ $ deactivate
 If you would like to delete the previously created virtual enviroment, simply delete the environment directory since `venv` environment is essentially a directory containing files and folders. 
 
 ```
-$ rm -rf .venv
+$ rm -rf venv
 ```
 
 If you created a Jupyter kernel you will also need to remove that with the following command from your home
