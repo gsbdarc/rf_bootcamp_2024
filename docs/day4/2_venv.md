@@ -149,19 +149,20 @@ $ rm -r ~/.local/share/jupyter/kernels/venv
 ```
 
 # Exercise
-1. Navigate to examples/python_examples
-2. Create a new virtual environment name **venv**
-3. Activate the Environment
-4. Install the packages in requirements.txt
+
+1. Navigate to `examples/python_examples`
+2. Create a new virtual environment named **venv**
+3. Activate the environment
+4. Install the packages in `requirements.txt`
 
 <details>
 <summary>Click for answer</summary>
-
-```bash
-$ cd examples/python_examples
-$ python3 -m venv venv
-$ source venv/bin/activate
-(venv) $ pip install -r requirements.txt
-```
-
+<div class="language-bash highlighter-rouge">
+<pre class="highlight"><code>
+<span class="nv">$ </span><span class="nb">cd examples/python_examples</span>
+<span class="nv">$ </span><span class="nb">python3 -m venv venv</span>
+<span class="nv">$ </span><span class="nb">source venv/bin/activate</span>
+<span class="nv">(venv) $ </span><span class="nb">pip install -r requirements.txt</span>
+</code></pre>
+</div>
 </details>

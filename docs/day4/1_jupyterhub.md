@@ -46,7 +46,7 @@ Code is written into cells, which can be run in any order, on demand.
 You can also include text, images, and plots to make your code read like a lab notebook.  
 Contact the [DARC team](mailto:gsb_darcresearch@stanford.edu) if you have a language you would like installed.
 
-**Note:** If you do not see Julia as an option under Notebooks, see <a href="/faqs/installJuliaOnJupyter.html" target="_blank">this page</a> on how to add it.
+**Note:** If you do not see Julia as an option under Notebooks, see <a href="https://rcpedia.stanford.edu/faqs/installJuliaOnJupyter.html" target="_blank">this page</a> on how to add it.
 
 ### RStudio
 -----------
