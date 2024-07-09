@@ -24,9 +24,9 @@ You will need to login with your SUNet credentials, and then click on `Start My 
 
 ![](../assets/images/launch-hub.png)
 
-{% include important.html content="JupyterHub instances on each `yen` server are INDEPENDENT of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`." %}
+ **IMPORTANT:** JupyterHub instances on each `yen` server are INDEPENDENT of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`." 
 
-{% include warning.html content="JupyterHub does not work well on Safari - we recommend using a different browser." %}
+**WARNING:** JupyterHub does not work well on Safari - we recommend using a different browser."
 
 ## Features of JupyterHub
 
@@ -34,7 +34,7 @@ We recommend taking a look at the <a href="https://jupyter-notebook.readthedocs.
 
 The JupyterLab interface looks like:
 
-![](../assets/images/jupyterlab.png)
+![](../assets/images/jupyterhub.png)
 
 The front panel has a Launcher interface from which you can start notebooks with different language kernels and custom environment kernels.
 
@@ -71,14 +71,14 @@ You can launch interactive consoles from JupyterHub.  These will behave very sim
 You can launch a terminal from JupyterHub.  This provides access to commands you would normally run on the command line on the Yens, 
 but through the web browser. However, we have seen issues with JupyterHub terminal (as well as VSCode) that modifies or overwrites python paths and environment variables so for package installations, we recommend using a terminal outside of JupyterHub.
 
-Let's open up a Terminal and make a new directory where the scripts for this class will live.
+Let's open up a Terminal and navigate to the rf_bootcamp_2024
 
 
 ```bash
-$ mkdir intro_yens_sep_2023
-$ mv investment-npv-parallel.R intro_yens_sep_2023
+$ cd rf_bootcamp_2024/examples/python_examples/
+$ ls
 ```
-We moved the script `investment-npv-parallel.R` into the newly created directory, `intro_yens_sep_2023`.
+This should show all the different examples available in the `rf_bootcamp_2024` directory.
 
 ### File Browser
 The JupyterHub instances will automatically launch from your home directory on the Yens. 
@@ -141,7 +141,7 @@ If your processes require more than these limits, reach out to the <a href="http
 Finally, you can also edit text files like R scripts directly on JupyterHub. Clicking on Text File icon will open a new file that you can edit. Similarly, clicking on Python File will create an empty `.py` file and clicking on R File will create an empty `.r` file.
 You can also navigate to a directory that has the scripts you want to edit and double click on the script name to open it up in the Text Editor.
 
-For example, navigate to `intro_yens_sep_2023` folder in file brower first then double click on `investment-npv-parallel.R` file to open it in the text editor:
+For example, navigate to `rf_bootcamp_2024/examples/r_examples` folder in file brower first then double click on `investment-npv-parallel.R` file to open it in the text editor:
 ![](../assets/images/edit-r-script.png)
 
 ---
