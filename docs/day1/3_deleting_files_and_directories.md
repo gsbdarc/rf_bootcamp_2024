@@ -41,3 +41,7 @@ machine_name:~$ rm -r test_dir
 - More generally, an **option** (often called a **flag**) is another way to change the behavior of a program besides an argument
 
 - A shell program knows which argument is which from the order of them, while options have names (e.g. `-r`) that the program can recognize
+
+## More resources
+
+We'll only have time to scratch the surface of interacting with computers via the shell today and tomorrow; See lessons [1](https://missing.csail.mit.edu/2020/course-shell/) and [3](https://missing.csail.mit.edu/2020/shell-tools/) of [the Missing Semester](https://missing.csail.mit.edu) open-source MIT course on miscellaneous software engineering skills for more in-depth information and tips about making the most of the shell.
