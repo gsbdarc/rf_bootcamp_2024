@@ -30,10 +30,11 @@ machine_name:~/test_dir$ ls test2
 - To delete a directory and its contents (if any), have to pass the `-r` flag to the `rm` program:
 
 ```bash
-machine_name:~/test_dir$ rm -r test2
+machine_name:~/test_dir$ cd ..
+machine_name:~$ rm -r test_dir
 ```
 
-- *Note:* if you run `rm test2` without the `-r` flag, the shell will complain since `test2` is a directory, not a file
+- *Note:* if you run `rm test_dir` without the `-r` flag, the shell will complain since `test_dir` is a directory, not a file
 
 ## Shell program flags
 

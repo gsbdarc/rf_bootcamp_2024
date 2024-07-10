@@ -98,9 +98,9 @@ machine_name:~/test_dir/test2$ pwd
 
 - The following file system diagram illustrates an example directory structure as a tree:
 
-![](../assets/images/home-dir.png)
+![](../assets/images/home-dir-local-machine.png)
 
-- The directories highlighted in orange form the absolute path `/home/users/<SUNetID>`, which is typically aliased by `~`
+- The directories highlighted in orange form the absolute path `/Users/nrapstine`, which is typically aliased by `~`
 
 ## Relative path helpers
 
