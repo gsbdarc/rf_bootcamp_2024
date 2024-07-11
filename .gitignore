@@ -166,3 +166,10 @@ cython_debug/
 
 # File system nuisance files
 **/.DS_Store
+
+# Jekyll build stuff
+/docs/.vendor/
+/docs/_site/
+/docs/.bundle/
+Gemfile.lock
+.bundle/
