@@ -42,6 +42,15 @@ machine_name:~$ rm -r test_dir
 
 - A shell program knows which argument is which from the order of them, while options have names (e.g. `-r`) that the program can recognize
 
+- As more examples of helpful flags, let's return to the `ls` command that lists the contents of a directory
+    - If you specify the `-l` flag when running `ls`, the shell will list the contents of the directory with much more detailed information, such as the size of the file and the last time it was modified
+    - If you also specify the `-h` flag, then the file sizes will be provided in "human-readable" form, i.e. in KB, MB, GB, or TB instead of in raw bytes (if you can do the conversions quickly in your head, good on you!)
+    - Note that you can specify multiple flags after a `-`, e.g.
+
+    ```bash
+    machine_name:~$ ls -lh
+    ```
+
 ## More resources
 
 We'll only have time to scratch the surface of interacting with computers via the shell today and tomorrow; See lessons [1](https://missing.csail.mit.edu/2020/course-shell/) and [3](https://missing.csail.mit.edu/2020/shell-tools/) of [the Missing Semester](https://missing.csail.mit.edu) open-source MIT course on miscellaneous software engineering skills for more in-depth information and tips about making the most of the shell.
