@@ -1,9 +1,9 @@
 ---
-title: Day 3 
+title: Day 1
 layout: page
-nav_order: 4
+nav_order: 2
 has_children: true
-updateDate: 2024-06-19
+updateDate: 2024-07-03
 ---
 
 # {{ page.title }}

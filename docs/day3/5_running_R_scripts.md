@@ -1,9 +1,9 @@
 ---
-title: 6. Running R Scripts Interactively 
+title: 5. Running R Scripts Interactively 
 layout: page
-nav_order: 6
+nav_order: 5
 parent: Day 3
-updateDate: 2024-06-20
+updateDate: 2024-07-10
 ---
 
 # {{ page.title }}
