@@ -1,9 +1,9 @@
 ---
-title: 9. Monitoring Usage
+title: 8. Monitoring Usage
 layout: page
-nav_order: 9 
+nav_order: 8
 parent: Day 3
-updateDate: 2024-06-25
+updateDate: 2024-07-10
 ---
 
 # {{ page.title }}

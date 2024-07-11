@@ -1,9 +1,9 @@
 ---
-title: 8. Yen Policy
+title: 7. Yen Policies
 layout: page
-nav_order: 8 
+nav_order: 7
 parent: Day 3
-updateDate: 2024-06-19
+updateDate: 2024-07-10
 ---
 
 
