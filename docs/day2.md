@@ -1,7 +1,7 @@
 ---
-title: Day 3 
+title: Day 2
 layout: page
-nav_order: 3
+nav_order: 2
 has_children: true
 updateDate: 2024-07-10
 ---
