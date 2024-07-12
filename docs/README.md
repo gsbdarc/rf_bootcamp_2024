@@ -35,8 +35,8 @@ updateDate: 2024-07-10
 
 ### Natalya Rapstine
 <div style="display: flex; justify-content: space-between;">
-  <img src="{{ site.baseurl }}/assets/images/natalya-profile.png" alt="Natalya" style="width: 48%;">
-  <img src="{{ site.baseurl }}/assets/images/natalya-profile-2.png" alt="Leo" style="width: 48%;">
+  <img src="{{ site.baseurl }}/assets/images/natalya-profile.png" alt="Natalya" style="width: 60%;">
+  <img src="{{ site.baseurl }}/assets/images/natalya-profile-2.png" alt="Leo" style="width: 40%;">
 </div>
 I'm a research computing specialist in the DARC team at the Research Hub at Stanford GSB. Prior to joining the DARC team in 2020, I worked in government and industry in high performance computing developing parallel scientific code and applications. My expertise is in high performance computing, parallel programming, scientific computing, and AI.  
 
