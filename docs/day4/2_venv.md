@@ -1,5 +1,5 @@
 ---
-title: 2. Python Virtual Environments
+title: 2. Virtual Environments
 layout: page
 nav_order: 2
 parent: Day 4
@@ -10,29 +10,29 @@ updateDate: 2024-06-20
 
 
 # {{ page.title }}
-Python environments are a foundational aspect of professional Python development, allowing developers to isolate and manage Python packages and dependencies specific to individual projects or tasks. This isolation is crucial in maintaining a clean and organized development workspace, as it prevents conflicts between packages used in different projects. Furthermore, virtual environments ensure that projects are reproducible and can be shared with others without compatibility issues, as all the necessary dependencies are clearly defined and contained within the environment.
 
-Managing Python virtual environments can be achieved through various tools, each offering unique features and benefits. The most commonly used tools include:
+Virtual environments are a foundational aspect of professional development, allowing developers to isolate and manage packages and dependencies specific to individual projects or tasks. This isolation is crucial in maintaining a clean and organized development workspace, as it prevents conflicts between packages used in different projects. Furthermore, virtual environments ensure that projects are reproducible and can be shared with others without compatibility issues, as all the necessary dependencies are clearly defined and contained within the environment.
 
-* `venv`: built into Python 3.3 and later. (Recommended)
-* `virtualenv`: third-party tool that supports both newer and older Python versions.
-* [Anaconda](https://www.anaconda.com/products/distribution): third-party tool popular in data science.
-* `Pipenv`: third-party tool that combines package management with virtual environment management.
+## Different Tools for Python Environment Management
 
-The choice of tool often depends on the specific needs of a project and the preferences of a development team. For instance, `venv` is typically sufficient for straightforward Python projects, while `virtualenv` might be preferred for projects requiring compatibility with older Python versions or more granular control over the environment.
+* [`venv`](https://docs.python.org/3/library/venv.html): built into Python 3.3 and later. (Recommended)
+* [`Anaconda`](https://www.anaconda.com/products/distribution): third-party tool popular in data science.
+* [`renv`](https://rstudio.github.io/renv/articles/renv.html): renv package helps you create reproducible environments for your R projects.
 
-Regardless of the tool selected, the best practices for using Python virtual environments involve:
-1. **Creating a New Environment for Each Project**: This ensures that each project has its own set of dependencies.
 
-2. **Documenting Dependencies**: Clearly listing all dependencies in a requirements file or using a tool that automatically manages this aspect.
 
-3. **Regularly Updating Dependencies**: Keeping the dependencies up-to-date to ensure the security and efficiency of your projects.
+## Best Practices for Environment Management
 
-By adhering to these practices, developers can take full advantage of Python virtual environments, leading to more efficient, reliable, and maintainable code development.
+1. **Creating a New Environment for Each Project**: This ensures that each project has its' own set of dependencies.
 
-### Best Practices on the Yens
-**Recommendation: Utilizing venv for Python Environment Management**
+2. **Documenting Dependencies**: Clearly list all dependencies in a requirements file or using a tool that automatically manages this aspect.
 
+3. **Regularly Updating Dependencies**: Keep the dependencies up-to-date to ensure the security and efficiency of your projects.
+
+
+## Recommendations on the Yens
+
+{: .important}
 We highly recommend using `venv`, Python’s built-in tool for creating virtual environments, especially in shared systems like the Yens. This recommendation is rooted in several key advantages that `venv` offers over other tools like `conda`:
 
 * **Built-in and Simple**: `venv` is included in Python's standard library, eliminating the need for third-party installations and making it straightforward to use, especially beneficial in shared systems where ease of setup and simplicity are crucial.
@@ -41,8 +41,7 @@ We highly recommend using `venv`, Python’s built-in tool for creating virtual 
 
 * **Ease of Reproducibility**: `venv` allows for easy replication of environments by using a `requirements.txt` file, ensuring that the code remains reproducible and consistent regardless of the platform.
 
-* **Terminal Agnostic**: `venv` will allow you to work in both JupyterHub Terminal, Linux Terminal, and Slurm through a single unified location
-
+* **Terminal Agnostic**: `venv`  allows you to work across various terminals—including JupyterHub, Linux Terminal, and Slurm—from a single unified location
 
 ## Creating a New Virtual Environment with `venv`
 
@@ -91,43 +90,44 @@ Install any python package with `pip`:
 Install `ipykernel` package before installing the new environment as a kernel on JupyterHub:
 
 ```bash
-$ pip install ipykernel
+(venv) $ pip install ipykernel
 ```
 
 To add the **active** virtual environment as a kernel, run:
 ```bash
-$ python -m ipykernel install --user --name=<kernel-name>
+(venv) $ python -m ipykernel install --user --name=<kernel-name>
 ```
 where `<kernel-name>` is the name of the kernel on JupyterHub.
 
 Example 
 ```bash
-$ python -m ipykernel install --user --name=venv
+(venv) $ python -m ipykernel install --user --name=venv
 ```
 
 ![](../assets/images/jupyter_venv.png)
 
 ## Sharing the Environment
 
-Environments can get quite large and take up lots of space depending on the project. An easy way to share them is you share the requirements.txt file which is a list of all the libraries and versions
+Environments can get quite large and take up lots of space depending on the project. An easy way to share them is you share the requirements.txt file which is a list of all the libraries and versions. 
 
 ```bash 
 (venv)$  pip freeze > requirements.txt 
 ```
-This will be different depending on which packages you install and can help users run the code you developed using that environment
+This will be different depending on which packages you install and can help users run the code you developed using that environment.
 
 ![](../assets/images/requirements.png)
 
-To then replicated an environment onto another area, first create a new environment and install packages
+To then replicate an environment you need to perform the following steps:
 
 ```bash
-$ usr/bin/python3 -m venv new_venv
-$ source new_venv/bin/activate
-(new_venv)$ pip install -r requirements.txt 
+$ /usr/bin/python3 -m venv new_venv # Create the new environment
+$ source new_venv/bin/activate # Activate the new environment
+(new_venv)$ pip install -r requirements.txt # Install the packages
 ```
 
-!!! warning
-    Once the virtual environments are created they CANNOT be moved
+{: .warning}
+Once the virtual environments are created they SHOULD NOT be moved. This will break the environment and you may need to recreate it.
+
 
 ### Deactivating the Virtual Environment
 You can deactivate the virtual environment with:
@@ -145,7 +145,7 @@ $ rm -rf venv
 If you created a Jupyter kernel you will also need to remove that with the following command from your home
 
 ```bash 
-$ rm -r ~/.local/share/jupyter/kernels/venv
+$ jupyter kernelspec uninstall venv
 ```
 
 # Exercise
@@ -160,7 +160,7 @@ $ rm -r ~/.local/share/jupyter/kernels/venv
 <div class="language-bash highlighter-rouge">
 <pre class="highlight"><code>
 <span class="nv">$ </span><span class="nb">cd examples/python_examples</span>
-<span class="nv">$ </span><span class="nb">python3 -m venv venv</span>
+<span class="nv">$ </span><span class="nb">/usr/bin/python3 -m venv venv</span>
 <span class="nv">$ </span><span class="nb">source venv/bin/activate</span>
 <span class="nv">(venv) $ </span><span class="nb">pip install -r requirements.txt</span>
 </code></pre>
