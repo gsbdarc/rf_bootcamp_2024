@@ -8,7 +8,7 @@ updateDate: 2024-06-20
 
 # {{ page.title }}
 
-VS Code is a popular Integrated Development Environment (IDE) used across various industries. Although our systems integrate with VS Code, there are some caveats to its use in our current setup, which we will explain shortly. However, if you are committed to using VS Code, here's how to get started on our systems.
+VS Code is a popular Integrated Development Environment (IDE) used across various industries. Although our systems integrate with VS Code, there are some caveats to its' use in our current setup, which we will explain shortly. However, if you are committed to using VS Code, here's how to get started on our systems.
 
 For new users, you can download VS Code from [here](https://code.visualstudio.com/). The tutorials provided will help you learn the basics and advanced features of VS Code. Once you have VS Code installed, follow these steps to begin remote development:
 
@@ -40,7 +40,7 @@ For new users, you can download VS Code from [here](https://code.visualstudio.co
     ![](../assets/images/vscode_login.png)
 
 4. **Initialize Your Environment**:
-    - After connection, open a terminal in VS Code to start working on your projects.
+    - After connection, you should be able to to start working on your projects.
     - To ensure full functionality, as you would have in a regular SSH session, source your bash profile by running:
 
     ```bash
@@ -62,11 +62,12 @@ For new users, you can download VS Code from [here](https://code.visualstudio.co
     - You should now be able to execute all the commands you typically use in the terminal.
     - If you have any questions or need assistance, please reach out to our support team.
 
-For vs Code to work seamlessly it installs a server on the remote machine. This server is installed in the first time you connect to the remote machine.
+## Caveats
+For VS Code to work seamlessly it installs a server on the remote machine. This server is installed in the first time you connect to the remote machine.
 
-    ![](../assets/images/vscode_architecture.png)
+![](../assets/images/vscode_architecture.png)
 
-This server will take up space in your home and can be viewed by running the following command:
+This server will take up space in your home and can be viewed by running the following command in your home directory after connecting to the remote machine:
 
 ```bash
 ls -a
