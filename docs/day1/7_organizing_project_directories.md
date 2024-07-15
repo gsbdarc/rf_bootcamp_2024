@@ -33,7 +33,7 @@ To practice good project directory hygiene, try doing the following cleanup of t
     SUNetID@yen4:~$ mv <Path-To-Source-File> <Path-To-Destination-File>
     ```
     where the paths `<Path-To-Source-File>` and `<Path-To-Destination-File>` should include the names of the files
-3. Modify “test_script.R” so that when you run it from the top project directory `~/test_project`, it reads `input.txt` from the `data` directory.
+3. Modify “test_script.R” so that when you run it from the top project directory `~/test_project`, it reads `input.txt` from the `data` directory and writes `output.txt` to the `output` directory.
 
 ## More best practices: code automation
 
@@ -50,7 +50,7 @@ Rscript test_script.R
 
 - The `#!/bin/bash` at the top of the file indicates to the computer that the lines of the file should be interpreted using the `bash` shell (the name of the kind of shell we've been using throughout today).
 
-- To run the shell script, first use the `chmod` command to make the script runnable, then use `./<SCRIPT_NAME>` to run it:
+- To run the shell script, first use the `chmod` command to make the script executable, then use `./<SCRIPT_NAME>` to run it:
 ```bash
 SUNetID@yen4:~/test_project$ chmod +x build.sh
 SUNetID@yen4:~/test_project$ ./build.sh

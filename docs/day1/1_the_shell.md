@@ -14,11 +14,12 @@ updateDate: 2024-07-10
 - Most of us interact with computers day-to-day via **graphical user interfaces**
     - Windows with file contents we navigate with a mouse
 
-- To automate common research tasks, interact with computers through __the shell__ (sometimes called the command line)
+- To automate common research tasks, interact with computers through **a shell** (sometimes called the command line)
+    - In this class and in almost all research/industry environments, we use a Unix (Linux/Mac) shell (Windows has a shell too, but it's not used much)
 
 - The shell allows you to interact with your computer via text commands
 
-- Can write scripts that automate those interactions
+- You can also write scripts that automate those interactions
 
 ## Accessing the shell
 

@@ -1,5 +1,5 @@
 ---
-title: 4. The Yens
+title: 4. The Yen Servers
 layout: page
 nav_order: 4
 parent: Day 1
