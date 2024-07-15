@@ -24,9 +24,21 @@ You will need to login with your SUNet credentials, and then click on `Start My 
 
 ![](../assets/images/launch-hub.png)
 
- **IMPORTANT:** JupyterHub instances on each `yen` server are INDEPENDENT of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`.
+{: .important }
+JupyterHub instances on each `yen` server are INDEPENDENT of each other! If you launch a server on `yen3`, it will only use resources available on `yen3`.
 
-**WARNING:** JupyterHub does not work well on Safari - we recommend using a different browser.
+{: .warning }
+JupyterHub does not work well on Safari - we recommend using a different browser.
+
+## Recommended Use of JupyterHub 
+
+JupyterHub is a great tool for interactive computing, data analysis, and visualization. It is not however recommended for running long jobs or computationally intensive tasks. For these tasks, we recommend using the Yen servers directly. 
+
+The typical development workflow is to use JupyterHub and more specifically the Jupyter Notebooks and RStudio, for prototyping and testing code, and then running the final version on the Yen servers or Slurm Cluster.
+
+
+![](../assets/images/jupyter_in_yens.png)
+
 
 ## Features of JupyterHub
 
@@ -38,33 +50,33 @@ The JupyterLab interface looks like:
 
 The front panel has a Launcher interface from which you can start notebooks with different language kernels and custom environment kernels.
 
-### Notebook
-![](../assets/images/jupyternotebook.png)
+## File Browser
+The JupyterHub instances will automatically launch from your home directory on the Yens. 
+Your home directory is a file icon shown by the red arrow:
 
-Notebooks allow you to write code and execute it on the yens in your web browser. 
-Code is written into cells, which can be run in any order, on demand. 
-You can also include text, images, and plots to make your code read like a lab notebook.  
-Contact the [DARC team](mailto:gsb_darcresearch@stanford.edu) if you have a language you would like installed.
+![](../assets/images/file-browser.png)
 
-**Note:** If you do not see Julia as an option under Notebooks, see <a href="https://rcpedia.stanford.edu/faqs/installJuliaOnJupyter.html" target="_blank">this page</a> on how to add it.
+The current directory is also displayed at the top of the file browser.
 
-### RStudio
------------
-![](../assets/images/rstudio.png)
+Clicking on the home icon (folder icon), returns the file browser back to your home where you can access any directories that are accessible from your home on the Yens.
 
-RStudio GUI is also available! Clicking this link will bring up a new tab with a web-based RStudio on the Yens.
+![](../assets/images/home-dir-zfs.png)
 
-If you opened up a notebook and want to get back to the Launcher interface to launch other software as well, click the "+" button in the upper left corner:
-![](../assets/images/launcher.png)
+Double click on the `zfs` directory in your home directory to navigate to your ZFS project files.
 
 
-### Console
--------------------------
-![](../assets/images/console.png)
+## File Upload and Download
+----------------------------
+![](../assets/images/jupyter_upload.png)
 
-You can launch interactive consoles from JupyterHub.  These will behave very similar to the versions on the Yen servers.
+One very useful feature of JupyterHub is the ability to upload and download files from ZFS. 
+First, make sure you are in the proper directory. Then, to upload, click the up arrow on the top left of your screen to select a file from your local machine to upload to the Yens.
 
-### Terminal
+![](../assets/images/jupyter_download.png)
+
+To download, right click the file you would like to download to your local machine, and click "Download".
+
+## Terminal
 -------------------------
 ![](../assets/images/terminal.png)
 
@@ -80,41 +92,51 @@ $ ls
 ```
 This should show all the different examples available in the `rf_bootcamp_2024` directory.
 
-### File Browser
-The JupyterHub instances will automatically launch from your home directory on the Yens. 
-Your home directory is a file icon shown by the red arrow:
 
-![](../assets/images/file-browser.png)
+## Notebook
+![](../assets/images/jupyternotebook.png)
 
-The current directory is also displayed:
-
-
-Clicking on the home icon (folder icon), returns the file browser back to your home where you can access any directories that are accessible from your home on the Yens.
-
-![](../assets/images/home-dir-zfs.png)
-
-Double click on the `zfs` directory in your home directory to navigate to your ZFS project files.
+Notebooks allow you to write code and execute it on the yens in your web browser. 
+Code is written into cells, which can be run in any order on demand. 
+You can also include text, images, and plots to make your code read like a lab notebook.  
 
 
-### File Upload and Download
-----------------------------
-![](../assets/images/jupyter_upload.png)
+If there's a specific programming language you'd like to see installed contact the [DARC team](mailto:gsb_darcresearch@stanford.edu) 
 
-One very useful feature of JupyterHub is the ability to upload and download files from ZFS. 
-First, make sure you are in the proper directory. Then, to upload, click the up arrow on the top left of your screen to select a file from your local machine to upload to the Yens.
-
-![](../assets/images/jupyter_download.png "File Download")
-
-To download, right click the file you would like to download to your local machine, and click "Download".
+### Notebook Organization
+When working in a notebook, it is important to keep meticulous documentation. Common practice is to use markdown cells to document the purpose different sections of your code and either markdown or comments to describe the code itself.
 
 
-### Installing Packages
+
+![](../assets/images/jupyter_notebook_example.png)
+
+
+You will see in this example that the first cell contains library imports and subsequent cells contain section headers and code. 
+
+{: .note}
+In the file browser of the above image you can see  python file. Once you are confident in your section snippets, it is common practice to copy and paste them into a Python file for final execution.
+
+
+## RStudio
+-----------
+![](../assets/images/rstudio.png)
+
+RStudio GUI is also available! Clicking this link will bring up a new tab with a web-based RStudio on the Yens.
+
+If you opened up a notebook and want to get back to the Launcher interface to launch other software as well, click the "+" button in the upper left corner:code 
+![](../assets/images/launcher.png)
+
+
+## Installing Packages
 -----------------------
 JupyterHub loads packages found in your `~/.local/` directory. 
 If you wish to install Python packages to be available in a JupyterHub notebook, we recommend using <a href="https://rcpedia.stanford.edu/topicGuides/pythonEnv.html" target="_blank">Python `venv`</a> environment. 
 
+{: .warning}
+!pip installing packages in the Notebook cells will not work as expected.
 
-### Compute Limits
+
+## Compute Limits
 
 The following limits will be imposed on JupyterHub servers:
 
@@ -133,11 +155,12 @@ The following limits will be imposed on JupyterHub servers:
 
 JupyterHub instance will shut down after 3 hours idle (no notebooks actively running code).
 
-**WARNING:** Idle servers shut down will not retain any local packages or variables in the notebooks.  Please save your output.
+{: .warning}
+Idle servers shut down will not retain any local packages or variables in the notebooks.  Please save your output.
 
 If your processes require more than these limits, reach out to the <a href="https://rcpedia.stanford.edu/services/researchSupportRequest.html" target="_blank">DARC team</a> for support.
 
-### Text File Editor
+## Text File Editor
 -------------------------
 ![](../assets/images/editor.png)
 

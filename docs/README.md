@@ -43,6 +43,9 @@ I'm a research computing specialist in the DARC team at the Research Hub at Stan
 My favorite place on the planet is San Diego and my hobbies are video games (League of Legends mostly), music festivals, reading sci-fi, running and yoga (also taking care of my spunky 7-year old but that’s a full time job, not a hobby…)
 
 ### Jeff Ott
+I am a Research Analytics Scientist with the DARC team at the Research Hub at Stanford GSB. Prior to joining the DARC team in 2022, I worked as a Petroleum Engineer in the oil and gas industry in West Texas. I returned to school to earn my Master’s in Data Science.
+
+I love hiking, gaming, and exercising. I am a D&D enthusiast and enjoy cooking. I have two cats and am currently knee-deep in a game development hobby.
 
 ## The DARC Team:
 ![](/assets/images/gsbrh_092122_0021.jpg)
