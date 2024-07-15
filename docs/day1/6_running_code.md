@@ -30,10 +30,10 @@ SUNetID@yen4:~$ ml R
 ```bash
 SUNetID@yen4:~$ module spider R
 ```
-    - When you load a program like `R` without specifying a software version, the default version is loaded (in this case, version 4.2.3 of `R`)
+    - When you load a program like `R` without specifying a software version, the default version is loaded (in this case, version 4.2.1 of `R`)
     - You can scroll down the returned list using the `d` key on your keyboard
     - If you run `module spider` with no arguments, you get a list of all available software packages
-    - To load a specific version of a software package you want to load, run `ml <Program-Name>/<Version-Number>`, e.g. `ml R/4.2.3`
+    - To load a specific version of a software package you want to load, run `ml <Program-Name>/<Version-Number>`, e.g. `ml R/4.2.1`
 
 - Now, you can run the script `~/test_script.R` by passing a path to it as an argument to the `Rscript` command like so:
 ```bash
