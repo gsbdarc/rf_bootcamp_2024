@@ -25,6 +25,7 @@ updateDate: 2024-07-10
 ## Who are we?
 
 ### Brad Ross
+![](/assets/images/brad-profile.png)
 
 - A rising 5th year PhD student in Economics at the GSB
     - Research in Urban Economics and Econometrics
@@ -33,15 +34,21 @@ updateDate: 2024-07-10
 - Outside of research and teaching, I love running, cooking/baking, making music, and watching tennis
 
 ### Natalya Rapstine
-
-I'm a research computing specialist in the DARC team at the Research Hub at Stanford GSB. Prior to joining the DARC team in 2020, I worked in government and industry in high performance computing developing parallel scientific code and applications. My expertise is in high performance computing, parallel programming, scientific computing, machine learning, deep learning applications, and statistical methods in Python and R languages. I have a BS degree in earth science from Rice University and an MS degree in statistics from Colorado School of Mines.
+<div style="display: flex; justify-content: space-between;">
+  <img src="{{ site.baseurl }}/assets/images/natalya-profile.png" alt="Natalya" style="width: 60%;">
+  <img src="{{ site.baseurl }}/assets/images/natalya-profile-2.png" alt="Leo" style="width: 40%;">
+</div>
+I'm a research computing specialist in the DARC team at the Research Hub at Stanford GSB. Prior to joining the DARC team in 2020, I worked in government and industry in high performance computing developing parallel scientific code and applications. My expertise is in high performance computing, parallel programming, scientific computing, and AI.  
 
 My favorite place on the planet is San Diego and my hobbies are video games (League of Legends mostly), music festivals, reading sci-fi, running and yoga (also taking care of my spunky 7-year old but that’s a full time job, not a hobby…)
 
 ### Jeff Ott
+I am a Research Analytics Scientist with the DARC team at the Research Hub at Stanford GSB. Prior to joining the DARC team in 2022, I worked as a Petroleum Engineer in the oil and gas industry in West Texas. I returned to school to earn my Master’s in Data Science.
+
+I love hiking, gaming, and exercising. I am a D&D enthusiast and enjoy cooking. I have two cats and am currently knee-deep in a game development hobby.
 
 ## The DARC Team:
-![](../assets/images/gsbrh_092122_0021.jpg)
+![](/assets/images/gsbrh_092122_0021.jpg)
 
 ### Contact Us
 - Join <a href="https://circlerss.slack.com/archives/C01JXJ6U4E5" target="_blank">#gsb-yen-users Slack channel</a> where you can ask and answer GSB Yen related questions and share your Yen usage wisdom with the community - Yen users and the DARC team. We will also use this channel to announce Yen related workshops and poll users about the Yens to improve our services. In case the link does not work, open Slack application, search for <b>#gsb-yen-users</b> channel in Channels and join it.

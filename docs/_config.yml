@@ -64,3 +64,15 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+callouts:
+  warning:
+    title: Warning
+    color: red
+  important:
+    title: Important
+    color: blue
+  note:
+    title: Note
+    color: purple
+  
+

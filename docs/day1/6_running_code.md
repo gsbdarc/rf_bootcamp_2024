@@ -12,14 +12,19 @@ updateDate: 2024-07-10
 - Before you run any code, you need some code to run; to get practice using Vim, open a new file called `test_script.R` in your ZFS home directory with Vim, write the following `R` code in it, and save it:
 
 ```R
-input_file = file("input.txt")
+INPUT_PATH = "~"
+OUTPUT_PATH = "~"
+
+input_file = file(file.path(INPUT_PATH, "input.txt"))
 input_text = readLines(input_file)
 close(input_file)
 
-output_file = file("output.txt")
+output_file = file(file.path(OUTPUT_PATH, "output.txt"))
 writeLines(toupper(input_text), output_file)
 close(output_file)
 ```
+
+- Note that in the code above, we define `INPUT_PATH` and `OUTPUT_PATH` as separate constants, which is good practice when the input and output file paths might change depending on where the script is run (stay tuned for Day 4 when you'll learn how to write scripts that take in arguments on the command line).
 
 - To run the script `~/test_script.R` with `R`, we first need to *load* our desired version of R into the shell on the Yen server using the `ml` command (short for `module load`):
 ```bash
