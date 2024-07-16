@@ -1,0 +1,1 @@
+This directory should contain any data used for analysis by scripts in the `src` directory.
