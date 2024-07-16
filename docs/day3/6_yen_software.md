@@ -1,7 +1,7 @@
 ---
-title: 4. Yen Software
+title: 6. Yen Software
 layout: page 
-nav_order: 4
+nav_order: 6
 parent: Day 3
 updateDate: 2024-07-10
 ---

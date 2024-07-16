@@ -1,8 +1,8 @@
 ---
-title: 7. Using Visual Studio Code With the Yens
+title: 2. Using Visual Studio Code With the Yens
 layout: page
-nav_order: 7
-parent: Day 2
+nav_order: 2
+parent: Day 3
 updateDate: 2024-07-16
 ---
 

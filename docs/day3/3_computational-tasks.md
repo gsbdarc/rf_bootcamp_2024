@@ -1,7 +1,7 @@
 ---
-title: 1. Computationally Intensive Empirical Tasks 
+title: 3. Computationally Intensive Empirical Tasks 
 layout: page
-nav_order: 1
+nav_order: 3
 parent: Day 3 
 updateDate: 2024-07-10
 ---

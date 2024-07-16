@@ -1,7 +1,7 @@
 ---
-title: 8. Monitoring Usage
+title: 10. Monitoring Usage
 layout: page
-nav_order: 8
+nav_order: 10
 parent: Day 3
 updateDate: 2024-07-10
 ---
