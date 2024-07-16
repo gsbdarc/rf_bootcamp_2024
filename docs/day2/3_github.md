@@ -22,9 +22,35 @@ updateDate: 2024-07-10
 
 ### Repository home
 
+![](../assets/images/github_home.png)
+
 ### Pull requests
 
+A pull request is essentially a request for permission to merge a group of commits on a branch besides `main` into `main`. To preserve the `main` branch for code that is sure to "work," Github provides a workflow to allow collaborators to review changes on other branches before they get merged into `main`.
+
+#### The basic view
+
+![](../assets/images/github_pr.png)
+
+#### The merge button
+
+![](../assets/images/github_merge_pr.png)
+
+#### A view of the changes
+
+![](../assets/images/github_files_changed_top.png)
+
+![](../assets/images/github_files_changed_body.png)
+
+#### Reviewing a pull request
+
+![](../assets/images/github_file_changed_comment.png)
+
 ### Issues
+
+Issues are more free-form ways to keep track of tasks that need to be completed for the project that the repository represents. They can correspond to very concrete bugs to fix or be places to collect discussions about less concrete future work. A nice feature of issues is that you can link one to a specific pull request so that when that pull request is merged into `main`, the issue is closed automatically as well.
+
+![](../assets/images/github_issue.png)
 
 ## More tutorials and resources
 
