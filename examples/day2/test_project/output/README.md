@@ -1,0 +1,1 @@
+This directory will contain all outputs of running scripts contained in the `src` directory, as well as any compiled papers or presentations whose source is contained in the `src` directory.
