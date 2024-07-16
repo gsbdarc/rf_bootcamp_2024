@@ -65,8 +65,16 @@ SUNetID@yen4:~/rf_bootcamp_2024/examples/day2/test_project$ git add src
 To see what changes have been staged for the next commit, use the `status` subcommand:
 ```bash
 SUNetID@yen4:~/rf_bootcamp_2024/examples/day2/test_project$ git status
-[TODO: INSERT GIT STATUS OUTPUT]
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   examples/day2/test_project/src/test_script.R
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        examples/day2/test_project/data/input.txt
 ```
+Notice that the status command lists both the files/folders with changes that are staged for the next commit, as well as files that Git does not track for changes (in this case, `./data/input.txt` since we've just created it and haven't `add`ed it yet). Any changes to files whose previous changes have been tracked by previous commits will also be listed in a separate category, "Changes not staged for commit."
 
 ### Committing staged changes
 
@@ -81,7 +89,12 @@ Because you can only look back in repository history commit by commit, **commit 
 To see the most recent few commits in reverse chronological order from the HEAD reference, use the `log` subcommand:
 ```bash
 SUNetID@yen4:~/rf_bootcamp_2024/examples/day2/test_project$ git log
-[TODO: INSERT GIT LOG OUTPUT]
+commit 14e756a7835ad25afcb46932baa6ca441eacc5e2 (HEAD -> main)
+Author: Brad Ross <brad.ross.35@gmail.com>
+Date:   Tue Jul 16 00:53:09 2024 -0700
+
+    changed toupper in test_script.R to tolower
+...
 ```
 
 ## Branching
@@ -141,17 +154,37 @@ SUNetID@yen4:~/rf_bootcamp_2024/examples/day2/test_project$ git merge new_branch
 
 After running this command, you should see the following message:
 ```bash
-[TODO: INSERT MERGE CONFLICT MESSAGE]
+Auto-merging src/test_script.R
+CONFLICT (content): Merge conflict in src/test_script.R
+Automatic merge failed; fix conflicts and then commit the result.
 ```
 
 Further, when you run `git status` after trying to conduct this branch merge, you should see the following message:
 ```bash
-[TODO: INSERT MERGE CONFLICT STATUS]
+On branch main
+You have unmerged paths.
+    (fix conflicts and run "git commit")
+    (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+    (use "git add <file> ... " to mark resolution)
+
+        both modified:  src/test_script.R
+
+...
+
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-Finally, when you open the `./src/test_script.R` file with Vim, you should see the following contents:
+Finally, when you open the `./src/test_script.R` file with Vim, you should see the following contents in the last few lines:
 ```R
-[TODO: INSERT CONFLICTING FILE CONTENTS]
+output_file = file(file.path(OUTPUT_PATH, "output.txt"))
+<<<<<<< HEAD
+writeLines(gsub(" ", "_", input_contents), output_file)
+=======
+writeLines(gsub(" ", "-", input_contents), output_file)
+>>>>>>>
+close(output_file)
 ```
 
 To resolve the merge conflict, just delete the version of the code associated with the commit at HEAD. Once you’ve chosen the version of the changes to `src/test_script.R` that you want to keep around, just stage `src/test_script.R` and then commit those changes to complete the merge. A good commit message is something like “merged new_branch onto master and resolved conflicts in favor of new_branch.” Resolving merge conflicts doesn’t have to be scary!
