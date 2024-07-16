@@ -62,3 +62,5 @@ SUNetID@yen4:~$ rclone copy <Path-To-Source-Directory> <Path-To-Destination-Dire
 
 - It can also be helpful to create a text file called `README.txt` that you always update to contain the most recent time when the data files were updated and where they were downloaded from (if downloaded from external sources)
     - You can also use a Markdown file format (`README.md`, as seen in the Git repository `~/rf_bootcamp_2024/examples/day2/test_project`), which allows lightweight text formatting (e.g. surrounding text with `*`s italicizes that text); a simple guide can be found [here](https://www.markdownguide.org/getting-started/).
+
+- Recently, some faculty have started hosting their data on [Redivis](https://redivis.com), which is a research-oriented data platform that automatically keeps track of versions of your data and allows you to query your data via SQL; they also have very nice python and R libraries that allow you to download data from their servers to the Yens.
