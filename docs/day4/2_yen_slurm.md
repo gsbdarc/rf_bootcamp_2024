@@ -1,9 +1,9 @@
 ---
-title: 3. Yen-Slurm Cluster 
+title: 2. Yen-Slurm Cluster 
 layout: page
-nav_order: 3
+nav_order: 2
 parent: Day 4
-updateDate: 2024-06-20
+updateDate: 2024-07-16
 ---
 
 # {{ page.title }}

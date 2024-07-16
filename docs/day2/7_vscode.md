@@ -1,14 +1,14 @@
 ---
-title: 9. VS Code on the Yen Systems
+title: 7. Using Visual Studio Code With the Yens
 layout: page
-nav_order: 9
-parent: Day 4
-updateDate: 2024-06-20
+nav_order: 7
+parent: Day 2
+updateDate: 2024-07-16
 ---
 
 # {{ page.title }}
 
-VS Code is a popular Integrated Development Environment (IDE) used across various industries. Although our systems integrate with VS Code, there are some caveats to its' use in our current setup, which we will explain shortly. However, if you are committed to using VS Code, here's how to get started on our systems.
+Visual Studio Code (or VS Code for short) is a popular Integrated Development Environment (IDE) used across various industries. Although our systems integrate with VS Code, there are some caveats to its' use in our current setup, which we will explain shortly. However, if you are committed to using VS Code, here's how to get started on our systems.
 
 For new users, you can download VS Code from [here](https://code.visualstudio.com/). The tutorials provided will help you learn the basics and advanced features of VS Code. Once you have VS Code installed, follow these steps to begin remote development:
 

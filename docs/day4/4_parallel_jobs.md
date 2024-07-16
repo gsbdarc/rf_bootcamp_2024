@@ -1,9 +1,9 @@
 ---
-title: 5. Parallel Script
+title: 4. Parallel Script
 layout: page
-nav_order: 5
+nav_order: 4
 parent: Day 4
-updateDate: 2024-06-26
+updateDate: 2024-07-16
 ---
 
 # {{ page.title }}
