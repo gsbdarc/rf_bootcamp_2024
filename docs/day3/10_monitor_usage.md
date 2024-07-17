@@ -44,7 +44,6 @@ $ userload
 
 Unlike personal home directories which have a 50 GB quota, faculty project directories on yens/ZFS are much bigger (1 T default). 
 Disk storage is a finite resource, however, so to allow us to continue to provide large project spaces please always be aware of your disk footprint. This includes compressing files when you are able, and removing intermediate and/or temp files whenever possible. 
-See the <a href="/storage/fileStorage.html" target="_blank">yen file storage page</a> for more information about file storage options.
 
 Disk quotas on all yen servers can be reviewed by using the ```gsbquota``` command. It produces output like this:
 
@@ -62,7 +61,7 @@ nrapstin@yen1:~$ gsbquota /zfs/projects/students/<my-project-dir>/
 
 
 ## Example
-We are going to continue using the same R example, `investment-npv-parallel.R`, and experiment running it on multiple cores and monitoring our resource consumption.
+We are going to continue using the same R example and experiment running it on multiple cores and monitoring our resource consumption.
 
 To monitor the resource usage while running a program, we will need three terminal windows that are all connected to the **same** yen server.
 
@@ -77,14 +76,15 @@ the `yen3` in both so I can monitor my resources when I start running the R prog
 
 ```bash
 $ ssh yen3.stanford.edu
+$ cd rf_bootcamp_2024/examples/r_examples
 ```
 
-Once you have three terminal windows connected to the same yen, run the `investment-npv-parallel.R` program after loading the R module
+Once you have three terminal windows connected to the same yen, run the `investment-npv-serial.R` program after loading the R module
 in one of the terminals:
 
 ```bash
 $ ml R
-$ Rscript investment-npv-parallel.R 
+$ Rscript investment-npv-serial.R 
 ```
 
 Once the program is running, monitor your usage with `userload` command in the second window:
@@ -106,62 +106,7 @@ $ userload
 nrapstin         | 0.99 Cores | 0.00% Mem on yen3.stanford.edu
 ```
 
-Let's modify the number of cores to 8:
- 
-```R
-# In the context of economics and finance, Net Present Value (NPV) is used to assess 
-# the profitability of investment projects or business decisions.
-# This code performs a Monte Carlo simulation of Net Present Value (NPV) with 50,000 trials in parallel,
-# utilizing multiple CPU cores. It randomizes input parameters for each trial, calculates the NPV,
-# and stores the results for analysis.
-
-# load necessary libraries
-library(foreach)
-library(doParallel)
-
-options(warn=-1)
-
-# set the number of cores here
-ncore <- 8
-
-# register parallel backend to limit threads to the value specified in ncore variable
-registerDoParallel(ncore)
-
-# define function for NPV calculation
-npv_calculation <- function(cashflows, discount_rate) {
-  # inputs: cashflows (a vector of cash flows over time) and discount_rate (the discount rate).
-  npv <- sum(cashflows / (1 + discount_rate)^(0:length(cashflows)))
-  return(npv)
-}
-
-# number of trials
-num_trials <- 50000
-
-# measure the execution time of the Monte Carlo simulation
-system.time({
-  # use the foreach package to loop through the specified number of trials (num_trials) in parallel
-  # within each parallel task, random values for input parameters (cash flows and discount rate) are generated for each trial
-  # these random input values represent different possible scenarios
-  results <- foreach(i = 1:num_trials, .combine = rbind) %dopar% {
-    # randomly generate input values for each trial
-    cashflows <- runif(10000, min = -100, max = 100)  # random cash flow vector over 10,000 time periods. 
-    # these cash flows can represent costs (e.g., initial investment) and benefits (e.g., revenue or savings) associated with the project
-    discount_rate <- runif(1, min = 0.05, max = 0.15)  # random discount rate at which future cash flows are discounted
-    
-    # calculate NPV for the trial
-    npv <- npv_calculation(cashflows, discount_rate)
-    
-  }
-})
-
-
-cat("Parallel NPV Calculation (using", ncore, "cores):\n")
-# print summary statistics for NPV and plot a histogram of the results
-# positive NPV indicates that the project is expected to generate a profit (the benefits outweigh the costs), 
-# making it an economically sound decision. If the NPV is negative, it suggests that the project may not be financially viable.
-summary(results)
-hist(results, main = 'NPV distribution')
-```
+Let's run the same program with more cores. See code [here](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/r_examples/investment-npv-parallel.R).
  
 Then rerun:
 
@@ -191,91 +136,7 @@ specified 8 cores in our R program and about 8 CPU cores being utilized in `user
 ![](../assets/images/monitor-2.png)
 
 Last modification we are going to make is to pass the number of cores as a command line argument to our R script.
-Save the following to a new script called `investment-npv-parallel-args.R`. 
-
-```R
-#!/usr/bin/env Rscript
-############################################
-# This script accepts a user specified argument to set the number of cores to run on
-# Run from the command line:
-#
-#      Rscript investment-npv-parallel-args.R 8
-#
-# this will execute on 8 cores
-###########################################
-# accept command line arguments and save them in a list called args
-args = commandArgs(trailingOnly=TRUE)
-library(foreach)
-library(doParallel)
-
-options(warn=-1)
-
-# set the number of cores here from the command line. Avoid using detectCores() function.
-ncore <- as.integer(args[1])
-
-# register parallel backend to limit threads to the value specified in ncore variable
-registerDoParallel(ncore)
-
-# define function for NPV calculation
-npv_calculation <- function(cashflows, discount_rate) {
-  # inputs: cashflows (a vector of cash flows over time) and discount_rate (the discount rate).
-  npv <- sum(cashflows / (1 + discount_rate)^(0:length(cashflows)))
-  return(npv)
-}
-
-# number of trials
-num_trials <- 50000
-
-# measure the execution time of the Monte Carlo simulation
-system.time({
-  # use the foreach package to loop through the specified number of trials (num_trials) in parallel
-  # within each parallel task, random values for input parameters (cash flows and discount rate) are generated for each trial
-  # these random input values represent different possible scenarios
-  results <- foreach(i = 1:num_trials, .combine = rbind) %dopar% {
-    # randomly generate input values for each trial
-    cashflows <- runif(10000, min = -100, max = 100)  # random cash flow vector over 10,000 time periods. 
-    # these cash flows can represent costs (e.g., initial investment) and benefits (e.g., revenue or savings) associated with the project
-    discount_rate <- runif(1, min = 0.05, max = 0.15)  # random discount rate at which future cash flows are discounted
-    
-    # calculate NPV for the trial
-    npv <- npv_calculation(cashflows, discount_rate)
-    
-  }
-})
-
-
-cat("Parallel NPV Calculation (using", ncore, "cores):\n")
-# print summary statistics for NPV and plot a histogram of the results
-# positive NPV indicates that the project is expected to generate a profit (the benefits outweigh the costs), 
-# making it an economically sound decision. If the NPV is negative, it suggests that the project may not be financially viable.
-summary(results)
-hist(results, main = 'NPV distribution')
-```
-
-Now, we can run this script with varying number of cores. We will still limit the number of cores to 48 on yen[2-5] and to 12 cores on yen1 per 
-Community Guidelines.
-
-
-For example, to run with 12 cores:
-
-```bash
-$ Rscript investment-npv-parallel-args.R 12
-```
-
-You should see:
-```bash
-Loading required package: iterators
-Loading required package: parallel
-   user  system elapsed
-302.366   2.344 116.261
-Parallel NPV Calculation (using 12 cores):
-       V1
- Min.   :-682.9972
- 1st Qu.: -96.5376
- Median :  -0.2428
- Mean   :  -0.2369
- 3rd Qu.:  96.1112
- Max.   : 720.2979
-```
+See the modified [script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/r_examples/investment-npv-parallel-args.R) called `investment-npv-parallel-args.R`. 
 
 Monitor your CPU usage while the program is running in the other terminal window with `htop` and `userload`.
+

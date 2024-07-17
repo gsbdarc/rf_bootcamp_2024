@@ -37,7 +37,7 @@ Let's run our serial R script again. This time, we will let it run in a screen (
 starting a screen preserves these in the new terminal started by `screen`). So, we can start our R process:
 
 ```bash
-$ Rscript investment-npv-parallel.R 
+$ Rscript investment-npv-serial.R 
 ```
 
 Once your script is going, you can exit out of this screen session with the keyboard shortcut `ctrl + a + d`, which will return you to your original terminal. 
