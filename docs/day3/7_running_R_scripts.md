@@ -170,7 +170,7 @@ Our Monte Carlo NPV simulation involves the following steps:
 4. Repeat this process for a substantial number of trials (e.g., 50,000) to obtain a distribution of NPV values.
 5. Analyze the results to understand the range and characteristics of NPV outcomes.
 
-By running this simulation, we will gain valuable insights into how different input parameters impact NPV calculations and enable more informed economic decision-making. We will run this hands-on example in serial and in parallel, interactively and using a scheduler. We are going to run the R code, `investment-npv-parallel.R`. View the complete script [here](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/investment-npv-parallel.R).
+By running this simulation, we will gain valuable insights into how different input parameters impact NPV calculations and enable more informed economic decision-making. We will run this hands-on example in serial and in parallel, interactively and using a scheduler. We are going to run the R code, `investment-npv-serial.R`. View the complete script [here](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/r_examples/investment-npv-serial.R).
 
 #### Running Serial R Script on the Command Line
 If you want to simply run the script, you can do so from the command line. 
@@ -188,7 +188,7 @@ ncore <- 1
 After loading the R module, we can run this script with `Rscript` command on the command line:
 
 ```bash
-$ Rscript investment-npv-parallel.R 
+$ Rscript investment-npv-serial.R 
 ```
 
 ```bash

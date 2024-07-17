@@ -26,7 +26,7 @@ In many research scenarios, tasks can exceed the capabilities of your laptop due
 - **CPU Role**: Memory is where information is stored, but the CPU does the work. The CPU (Central Processing Unit) executes tasks and is rated by processing speed (Hz) and the number of cores.
 - **Sequential vs. Parallel Processing**:
 	- Sequential tasks (instructions that must be performed in order) can be time-consuming. For example, a function `runSimulation()` taking 1 minute per run would need 1000 minutes to run 1000 times sequentially on a single laptop.
-	- Parallel processing can significantly reduce this time if we don't have to carry out the insturctions in order. With 100 laptops, the same task would take just 10 minutes.
+	- Parallel processing can significantly reduce this time if we don't have to carry out the instructions in order. With 100 laptops, the same task would take just 10 minutes.
 
 ### Parallelization and Multiple CPUs
 - **Side Effect-Free Functions**: Functions that do not change anything outside their local environment can be parallelized, as they have no 'side effects'.
