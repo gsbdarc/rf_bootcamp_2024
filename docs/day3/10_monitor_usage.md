@@ -92,7 +92,7 @@ Once the program is running, monitor your usage with `userload` command in the s
 ```bash
 $ userload
 ```
-Run `htop -u $USER` in the third window, hwere `$USER` is your SUNet:
+Run `htop -u $USER` in the third window, where `$USER` is your SUNet:
 
 ```
 $ htop -u $USER
