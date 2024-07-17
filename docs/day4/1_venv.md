@@ -57,7 +57,7 @@ Create a new virtual environment:
 ```bash
 $ /usr/bin/python3  -m venv venv # Note venv is a customizable name
 ```
-where we make a hidden directory `venv` inside the project directory. 
+where we make a directory `venv` inside the project directory. 
 
 ## Activating a New Virtual Environment 
 
