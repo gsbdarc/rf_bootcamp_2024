@@ -138,5 +138,8 @@ specified 8 cores in our R program and about 8 CPU cores being utilized in `user
 Last modification we are going to make is to pass the number of cores as a command line argument to our R script.
 See the modified [script](https://github.com/gsbdarc/rf_bootcamp_2024/blob/main/examples/r_examples/investment-npv-parallel-args.R) called `investment-npv-parallel-args.R`. 
 
-Monitor your CPU usage while the program is running in the other terminal window with `htop` and `userload`.
+```bash
+$ Rscript investment-npv-parallel-args.R 8
+```
 
+Monitor your CPU usage while the program is running in the other terminal window with `htop` and `userload`.
