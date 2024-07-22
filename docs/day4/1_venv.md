@@ -136,17 +136,20 @@ $ deactivate
 ```
 
 ### Removing the Virtual Environment
+
+If you created a Jupyter kernel you will first need to remove that with the following command from your home from **within** your virtual environment
+
+```bash 
+(venv) $ jupyter kernelspec uninstall venv
+```
+
+
 If you would like to delete the previously created virtual enviroment, simply delete the environment directory since `venv` environment is essentially a directory containing files and folders. 
 
 ```
 $ rm -rf venv
 ```
 
-If you created a Jupyter kernel you will also need to remove that with the following command from your home
-
-```bash 
-$ jupyter kernelspec uninstall venv
-```
 
 # Exercise
 
